@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Status Tracker — Sandeep Basnet | JOB NEPAL</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body style="background-color: #f8fafc;">
+
+  <!-- Dashboard Topbar -->
+  <header class="dashboard-topbar">
+    <a href="../index.html" class="brand-logo">
+      <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+        <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text-wrap">
+        <div class="brand-name">JOB <span>NEPAL</span></div>
+        <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+      </div>
+    </a>
+
+    <div style="position: relative;">
+      <span style="position: absolute; left: 14px; top: 10px; color: #94a3b8;">🔍</span>
+      <input type="text" class="dash-search-input" placeholder="Search application status..." id="dashHeaderSearch">
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a href="job-alerts.html" style="position: relative; text-decoration: none; color: inherit;" title="Job Alerts">
+        <span style="font-size: 1.25rem;">🔔</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #e11d48; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">3</span>
+      </a>
+
+      <a href="messages.html" style="position: relative; text-decoration: none; color: inherit;" title="Messages">
+        <span style="font-size: 1.25rem;">💬</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #0066ff; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">2</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding-left: 8px; border-left: 1px solid var(--border-color);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: #0066ff; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+          SB
+        </div>
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <span style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Sandeep Basnet</span>
+          <span style="font-size: 0.76rem; color: #64748b;">Job Seeker</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Split Layout -->
+  <div class="dash-main-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="dash-left-sidebar">
+      <ul class="sidebar-nav-list">
+        <li class="sidebar-nav-item">
+          <a href="dashboard.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🏠</span> Dashboard
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="profile.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>👤</span> My Profile
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="resume-builder.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📄</span> My Resume
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="applied-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💼</span> Applied Jobs
+            </div>
+            <span class="sidebar-badge">5</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="saved-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⭐</span> Saved Jobs
+            </div>
+            <span class="sidebar-badge" style="background: rgba(255,255,255,0.25);">8</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="recommended-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🎯</span> Recommended Jobs
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="job-alerts.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🔔</span> Job Alerts
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="messages.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💬</span> Messages
+            </div>
+            <span class="sidebar-badge">2</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item active">
+          <a href="application-status.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📈</span> Application Status
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="career.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📖</span> Career Resources
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="settings.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⚙️</span> Settings
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-mountain-footer">
+        <svg viewBox="0 0 200 60" width="100%" height="40" fill="none" style="opacity: 0.6; margin-bottom: 6px;">
+          <polygon points="10,60 50,15 90,60" fill="#ffffff"/>
+          <polygon points="80,60 120,5 160,60" fill="#ffffff"/>
+          <polygon points="140,60 175,25 200,60" fill="#ffffff"/>
+        </svg>
+        <div style="font-style: italic; margin-bottom: 8px;">
+          "Better Skills<br>Better Opportunities<br>A Brighter Future"
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #fff;">
+          <span>🇳🇵</span> Job Nepal
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dash-content-area" style="padding: 2rem;">
+      
+      <!-- Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+        <div>
+          <h1 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin: 0 0 4px 0;">📈 Live Application Pipeline</h1>
+          <p style="color: #64748b; margin: 0; font-size: 0.92rem;">Visual lifecycle tracking across all recruitment and interview milestones in Nepal.</p>
+        </div>
+        <a href="applied-jobs.html" class="btn btn-outline btn-sm">View All Applied Jobs (5)</a>
+      </div>
+
+      <!-- Application Tracking Cards -->
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        
+        <!-- Pipeline Card 1: Cotiviti Nepal (Interview Round) -->
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div class="company-avatar" style="width: 52px; height: 52px; font-size: 1.15rem;">CN</div>
+              <div>
+                <h2 style="font-size: 1.25rem; font-weight: 700; margin: 0 0 4px 0;">
+                  <a href="../job-details.html?id=job-101" style="color: inherit; text-decoration: none;">Senior Java & Spring Boot Engineer</a>
+                </h2>
+                <div style="font-size: 0.88rem; color: #475569;">
+                  <strong>Cotiviti Nepal</strong> • 📍 Hattisar, Kathmandu • 💰 NPR 150,000 – 220,000 / month
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 8px;">
+              <a href="messages.html" class="btn btn-primary btn-sm">💬 Chat HR</a>
+              <a href="../job-details.html?id=job-101" class="btn btn-outline btn-sm">View Job</a>
+            </div>
+          </div>
+
+          <!-- Stepper Progress Bar -->
+          <div style="margin: 1.5rem 0 2rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); text-align: center; position: relative; gap: 4px;">
+              <!-- Progress Line Behind -->
+              <div style="position: absolute; top: 16px; left: 10%; right: 10%; height: 4px; background: #e2e8f0; z-index: 1;">
+                <div style="width: 75%; height: 100%; background: #10b981;"></div>
+              </div>
+
+              <!-- Step 1 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #10b981; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">✓</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">Applied</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Sep 29, 2026</div>
+              </div>
+
+              <!-- Step 2 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #10b981; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">✓</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">Viewed</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Sep 30, 2026</div>
+              </div>
+
+              <!-- Step 3 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #10b981; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">✓</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">Shortlisted</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Oct 01, 2026</div>
+              </div>
+
+              <!-- Step 4 (Current) -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #0066ff; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; box-shadow: 0 0 0 4px #e6f0ff;">4</div>
+                <div style="font-size: 0.85rem; font-weight: 800; color: #0066ff;">Interview</div>
+                <div style="font-size: 0.75rem; color: #0066ff; font-weight: 700;">Oct 06, 2:00 PM</div>
+              </div>
+
+              <!-- Step 5 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #e2e8f0; color: #64748b; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">5</div>
+                <div style="font-size: 0.85rem; font-weight: 600; color: #94a3b8;">Offer Letter</div>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Pending</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Milestone Details -->
+          <div style="background: #e6f9f2; border: 1px solid #10b981; border-radius: var(--radius-lg); padding: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-weight: 800; color: #059669; font-size: 0.95rem;">🟢 Next Step: Zoom Technical & System Design Round</div>
+              <div style="font-size: 0.85rem; color: #065f46; margin-top: 2px;">Scheduled for Tuesday, October 6, 2026 at 2:00 PM (NPT) with Engineering Lead.</div>
+            </div>
+            <a href="https://zoom.us" target="_blank" class="btn btn-primary btn-sm" style="background: #059669; border-color: #059669;">Join Zoom Meeting 📹</a>
+          </div>
+        </div>
+
+        <!-- Pipeline Card 2: Leapfrog Technology (Shortlisted) -->
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div class="company-avatar" style="width: 52px; height: 52px; font-size: 1.15rem;">LF</div>
+              <div>
+                <h2 style="font-size: 1.25rem; font-weight: 700; margin: 0 0 4px 0;">
+                  <a href="../job-details.html?id=job-102" style="color: inherit; text-decoration: none;">Senior Python & AI Engineer</a>
+                </h2>
+                <div style="font-size: 0.88rem; color: #475569;">
+                  <strong>Leapfrog Technology</strong> • 📍 Dillibazar, Kathmandu • 💰 NPR 140,000 – 200,000 / month
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 8px;">
+              <a href="messages.html" class="btn btn-primary btn-sm">💬 Reply to Talent Team</a>
+              <a href="../job-details.html?id=job-102" class="btn btn-outline btn-sm">View Job</a>
+            </div>
+          </div>
+
+          <!-- Stepper Progress Bar -->
+          <div style="margin: 1.5rem 0 2rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); text-align: center; position: relative; gap: 4px;">
+              <div style="position: absolute; top: 16px; left: 10%; right: 10%; height: 4px; background: #e2e8f0; z-index: 1;">
+                <div style="width: 50%; height: 100%; background: #10b981;"></div>
+              </div>
+
+              <!-- Step 1 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #10b981; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">✓</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">Applied</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Sep 30, 2026</div>
+              </div>
+
+              <!-- Step 2 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #10b981; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">✓</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a;">Viewed</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Oct 01, 2026</div>
+              </div>
+
+              <!-- Step 3 (Current) -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #8b5cf6; color: #fff; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; box-shadow: 0 0 0 4px #f3e8ff;">3</div>
+                <div style="font-size: 0.85rem; font-weight: 800; color: #8b5cf6;">Shortlisted</div>
+                <div style="font-size: 0.75rem; color: #8b5cf6; font-weight: 700;">Action Required</div>
+              </div>
+
+              <!-- Step 4 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #e2e8f0; color: #64748b; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">4</div>
+                <div style="font-size: 0.85rem; font-weight: 600; color: #94a3b8;">Interview</div>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Pending</div>
+              </div>
+
+              <!-- Step 5 -->
+              <div style="position: relative; z-index: 2;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #e2e8f0; color: #64748b; margin: 0 auto 6px auto; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">5</div>
+                <div style="font-size: 0.85rem; font-weight: 600; color: #94a3b8;">Offer Letter</div>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Pending</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Milestone Details -->
+          <div style="background: #f3e8ff; border: 1px solid #8b5cf6; border-radius: var(--radius-lg); padding: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-weight: 800; color: #7c3aed; font-size: 0.95rem;">⭐ Shortlisted by AI & Engineering Team</div>
+              <div style="font-size: 0.85rem; color: #5b21b6; margin-top: 2px;">Recruiter sent you a message requesting GitHub repositories and project portfolio.</div>
+            </div>
+            <a href="messages.html" class="btn btn-primary btn-sm" style="background: #7c3aed; border-color: #7c3aed;">Open Messages 💬</a>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

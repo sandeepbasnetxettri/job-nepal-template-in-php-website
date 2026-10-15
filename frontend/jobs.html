@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs in Nepal — Find Your Dream Job | Job Nepal</title>
+  <meta name="description" content="Search thousands of jobs from top companies across Nepal. Filter by location, salary, experience, and category.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+        </div>
+      </a>
+
+      <!-- Center Nav Links -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link active">Jobs</a></li>
+        <li><a href="companies.html" class="nav-link">Companies</a></li>
+        <li><a href="career.html" class="nav-link">Career</a></li>
+        <li><a href="tech-learning.html" class="nav-link">Tech Learning</a></li>
+        <li><a href="resume-builder.html" class="nav-link">Resume Builder</a></li>
+      </ul>
+
+      <!-- Right Action -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-primary btn-sm" style="border-radius: var(--radius-full); padding: 0.45rem 1.25rem;">
+          Login / Sign Up
+        </a>
+        <div class="country-pill-dropdown">
+          <button id="countryDropdownBtn" class="country-pill" aria-label="Select Country" aria-expanded="false" onclick="toggleCountryDropdown(event)">
+            <span id="currentCountryFlag">🇳🇵</span> <span id="currentCountryName">Nepal</span> ▾
+          </button>
+          <div id="countryDropdownMenu" class="country-dropdown-menu">
+            <div class="country-dropdown-header">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-main);">Select Region / Country</span>
+            </div>
+            <div class="country-search-box">
+              <input type="text" id="countrySearchInput" placeholder="🔍 Search country..." oninput="filterCountries(this.value)">
+            </div>
+            <div class="country-list" id="countryList">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section matching Screenshot 1 -->
+  <section class="hero-wrapper" style="padding: 4rem 0 5rem;">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-heading">
+          Find Your Dream Job<br>in <span>Nepal</span>
+        </h1>
+        <p class="hero-desc">
+          Search thousands of jobs from top companies across Nepal.
+        </p>
+      </div>
+
+      <!-- Floating Search Card -->
+      <form action="jobs.html" method="GET" class="hero-search-card">
+        <div class="search-field-box">
+          <i>🔍</i>
+          <input type="text" id="filterKeyword" name="q" placeholder="Job title, keywords..." aria-label="Job title">
+        </div>
+
+        <div class="search-field-box">
+          <i>📍</i>
+          <select id="filterLocation" name="location" aria-label="Select Location">
+            <option value="Kathmandu" selected>Kathmandu</option>
+            <option value="Lalitpur">Lalitpur</option>
+            <option value="Bhaktapur">Bhaktapur</option>
+            <option value="Pokhara">Pokhara</option>
+            <option value="Chitwan">Chitwan</option>
+            <option value="Butwal">Butwal</option>
+            <option value="Biratnagar">Biratnagar</option>
+            <option value="Remote">Remote — Nepal</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="border-radius: var(--radius-md);">
+          Search Jobs
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Stats Counter Strip -->
+  <div class="container">
+    <div class="hero-stats-bar" style="margin-top: 4rem; margin-bottom: 2.5rem;">
+      <div class="hero-stat-pill">
+        <div class="stat-pill-icon">💼</div>
+        <div>
+          <div class="stat-pill-num">2,500+</div>
+          <div class="stat-pill-label">Active Jobs</div>
+        </div>
+      </div>
+
+      <div class="hero-stat-pill">
+        <div class="stat-pill-icon">🏢</div>
+        <div>
+          <div class="stat-pill-num">800+</div>
+          <div class="stat-pill-label">Companies</div>
+        </div>
+      </div>
+
+      <div class="hero-stat-pill">
+        <div class="stat-pill-icon">👥</div>
+        <div>
+          <div class="stat-pill-num">50,000+</div>
+          <div class="stat-pill-label">Job Seekers</div>
+        </div>
+      </div>
+
+      <div class="hero-stat-pill">
+        <div class="stat-pill-icon">🛡️</div>
+        <div>
+          <div class="stat-pill-num">100%</div>
+          <div class="stat-pill-label">Free for Job Seekers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Jobs (6-Card Grid matching Screenshot 1) -->
+  <main class="container" style="padding-bottom: 3.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+      <h2 style="font-size: 1.35rem; font-weight: 800;">Featured Jobs</h2>
+      <a href="jobs.html" style="font-size: 0.82rem; font-weight: 700; color: #0066ff;">View All Jobs →</a>
+    </div>
+
+    <div class="jobs-featured-grid">
+      
+      <!-- Card 1: Frontend Developer -->
+      <div class="featured-col-card" style="padding: 1.4rem;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #e0f2fe; color: #0066ff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+            👤
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;"><a href="job-details.html?id=job-103">Frontend Developer</a></h3>
+            <div style="font-size: 0.82rem; color: #64748b;">Himalayan Tech Pvt. Ltd.</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: #64748b; margin: 6px 0;">📍 Kathmandu</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Rs. 60,000 – 80,000</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Full-time</span>
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">On-site</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Marketing Manager -->
+      <div class="featured-col-card" style="padding: 1.4rem;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #fce7f3; color: #ec4899; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+            📢
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;"><a href="job-details.html?id=job-107">Marketing Manager</a></h3>
+            <div style="font-size: 0.82rem; color: #64748b;">Everest Media</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: #64748b; margin: 6px 0;">📍 Lalitpur</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Rs. 50,000 – 80,000</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Full-time</span>
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Hybrid</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Data Analyst -->
+      <div class="featured-col-card" style="padding: 1.4rem;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+            📊
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;"><a href="job-details.html?id=job-108">Data Analyst</a></h3>
+            <div style="font-size: 0.82rem; color: #64748b;">Global Finance Ltd.</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: #64748b; margin: 6px 0;">📍 Kathmandu</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Rs. 40,000 – 70,000</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Full-time</span>
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Remote</span>
+        </div>
+      </div>
+
+      <!-- Card 4: UI/UX Designer -->
+      <div class="featured-col-card" style="padding: 1.4rem;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #fef3c7; color: #d97706; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+            🎨
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;"><a href="job-details.html?id=job-103">UI/UX Designer</a></h3>
+            <div style="font-size: 0.82rem; color: #64748b;">Creative Studio</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: #64748b; margin: 6px 0;">📍 Pokhara</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Rs. 45,000 – 75,000</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Full-time</span>
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">On-site</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Software Engineer -->
+      <div class="featured-col-card" style="padding: 1.4rem;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #dbeafe; color: #1d4ed8; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+            ⚙️
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;"><a href="job-details.html?id=job-101">Software Engineer</a></h3>
+            <div style="font-size: 0.82rem; color: #64748b;">Tech Solutions Nepal</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: #64748b; margin: 6px 0;">📍 Kathmandu</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Rs. 70,000 – 120,000</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Full-time</span>
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Hybrid</span>
+        </div>
+      </div>
+
+      <!-- Card 6: Customer Support -->
+      <div class="featured-col-card" style="padding: 1.4rem;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #f0fdf4; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+            🎧
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;"><a href="job-details.html?id=job-106">Customer Support</a></h3>
+            <div style="font-size: 0.82rem; color: #64748b;">Nepal Telecom</div>
+          </div>
+        </div>
+        <div style="font-size: 0.8rem; color: #64748b; margin: 6px 0;">📍 Kathmandu</div>
+        <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Rs. 25,000 – 40,000</div>
+        <div style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">Full-time</span>
+          <span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);">On-site</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Popular Job Categories matching Screenshot 1 -->
+    <div style="margin-bottom: 1.25rem;">
+      <h2 style="font-size: 1.35rem; font-weight: 800;">Popular Job Categories</h2>
+    </div>
+
+    <div class="jobs-category-grid">
+      <a href="jobs.html?category=IT+%26+Software" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #eff6ff; color: #2563eb;">💻</div>
+        <div class="cat-title-text">IT & Software</div>
+      </a>
+      <a href="jobs.html?category=Marketing" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #fff1f2; color: #e11d48;">📢</div>
+        <div class="cat-title-text">Marketing</div>
+      </a>
+      <a href="jobs.html?category=Banking+%26+Finance" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #f0fdf4; color: #16a34a;">🏦</div>
+        <div class="cat-title-text">Finance</div>
+      </a>
+      <a href="jobs.html?category=Healthcare" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #fef2f2; color: #ef4444;">❤️</div>
+        <div class="cat-title-text">Healthcare</div>
+      </a>
+      <a href="jobs.html?category=Education" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #f0fdfa; color: #0d9488;">🎓</div>
+        <div class="cat-title-text">Education</div>
+      </a>
+      <a href="jobs.html?category=Engineering" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #eef2ff; color: #4f46e5;">⚙️</div>
+        <div class="cat-title-text">Engineering</div>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Dark Footer with Job Alerts Subscription matching Screenshot 1 -->
+  <footer style="background: #0f244a; color: #ffffff; padding: 3rem 0 1.5rem; margin-top: auto;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding-bottom: 2rem; margin-bottom: 1.5rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+            <svg width="32" height="20" viewBox="0 0 54 32" fill="none">
+              <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#ffffff" stroke-width="4"/>
+            </svg>
+            <span style="font-weight: 800; font-size: 1.3rem;">JOB NEPAL</span>
+          </div>
+          <div style="font-size: 0.85rem; color: #94a3b8;">Find Your Job. Build Your Future.</div>
+        </div>
+
+        <!-- Get Job Alerts Subscription Box -->
+        <div>
+          <div style="font-size: 0.88rem; font-weight: 700; margin-bottom: 8px;">Get job alerts</div>
+          <form onsubmit="event.preventDefault(); showToast('Subscribed to job alerts!', 'success');" style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Enter your email" class="form-control" style="background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #fff; width: 240px;" required>
+            <button type="submit" class="btn btn-primary btn-sm" style="border-radius: var(--radius-sm);">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="footer-social-links">
+          <a href="#">ⓕ</a>
+          <a href="#">in</a>
+          <a href="#">𝕏</a>
+          <a href="#">📷</a>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #94a3b8; flex-wrap: wrap; gap: 1rem;">
+        <div>© 2026 JOB NEPAL. All rights reserved.</div>
+        <div style="display: flex; gap: 1.25rem;">
+          <a href="career.html" style="color: #94a3b8;">About Us</a>
+          <a href="career.html" style="color: #94a3b8;">Contact</a>
+          <a href="career.html" style="color: #94a3b8;">Privacy Policy</a>
+          <a href="career.html" style="color: #94a3b8;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

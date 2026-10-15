@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Alerts & Notifications — Sandeep Basnet | JOB NEPAL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body style="background-color: #f8fafc;">
+
+  <!-- Dashboard Topbar -->
+  <header class="dashboard-topbar">
+    <a href="index.html" class="brand-logo">
+      <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+        <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text-wrap">
+        <div class="brand-name">JOB <span>NEPAL</span></div>
+        <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+      </div>
+    </a>
+
+    <div style="position: relative;">
+      <span style="position: absolute; left: 14px; top: 10px; color: #94a3b8;">🔍</span>
+      <input type="text" class="dash-search-input" placeholder="Search alerts, keywords..." id="dashHeaderSearch">
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a href="job-alerts.html" style="position: relative; text-decoration: none; color: inherit;" title="Job Alerts">
+        <span style="font-size: 1.25rem;">🔔</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #e11d48; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">3</span>
+      </a>
+
+      <a href="messages.html" style="position: relative; text-decoration: none; color: inherit;" title="Messages">
+        <span style="font-size: 1.25rem;">💬</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #0066ff; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">2</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding-left: 8px; border-left: 1px solid var(--border-color);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: #0066ff; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+          SB
+        </div>
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <span style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Sandeep Basnet</span>
+          <span style="font-size: 0.76rem; color: #64748b;">Job Seeker</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Split Layout -->
+  <div class="dash-main-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="dash-left-sidebar">
+      <ul class="sidebar-nav-list">
+        <li class="sidebar-nav-item">
+          <a href="dashboard.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🏠</span> Dashboard
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="profile.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>👤</span> My Profile
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="resume-builder.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📄</span> My Resume
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="applied-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💼</span> Applied Jobs
+            </div>
+            <span class="sidebar-badge">5</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="saved-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⭐</span> Saved Jobs
+            </div>
+            <span class="sidebar-badge" style="background: rgba(255,255,255,0.25);">8</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="recommended-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🎯</span> Recommended Jobs
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item active">
+          <a href="job-alerts.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🔔</span> Job Alerts
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="messages.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💬</span> Messages
+            </div>
+            <span class="sidebar-badge">2</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="application-status.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📈</span> Application Status
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="career.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📖</span> Career Resources
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="settings.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⚙️</span> Settings
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-mountain-footer">
+        <svg viewBox="0 0 200 60" width="100%" height="40" fill="none" style="opacity: 0.6; margin-bottom: 6px;">
+          <polygon points="10,60 50,15 90,60" fill="#ffffff"/>
+          <polygon points="80,60 120,5 160,60" fill="#ffffff"/>
+          <polygon points="140,60 175,25 200,60" fill="#ffffff"/>
+        </svg>
+        <div style="font-style: italic; margin-bottom: 8px;">
+          "Better Skills<br>Better Opportunities<br>A Brighter Future"
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #fff;">
+          <span>🇳🇵</span> Job Nepal
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dash-content-area" style="padding: 2rem;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.8rem;">
+        <div>
+          <h1 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin: 0 0 4px 0;">🔔 Job Alerts & Notifications</h1>
+          <p style="color: #64748b; margin: 0; font-size: 0.92rem;">Get instant notifications when new vacancies matching your criteria are published in Nepal.</p>
+        </div>
+        <button onclick="openCreateAlertModal()" class="btn btn-primary btn-sm">+ Create New Alert</button>
+      </div>
+
+      <!-- Active Alert Rules List -->
+      <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem;">
+        
+        <!-- Alert 1 -->
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.2rem;">
+          <div>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+              <span class="badge badge-success">Active • Daily Digest</span>
+              <span style="font-size: 0.8rem; color: #64748b;">Created 2 weeks ago</span>
+            </div>
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">Senior Python & Java Vacancies</h2>
+            <div style="font-size: 0.88rem; color: #475569;">
+              📍 Kathmandu / Lalitpur • 💰 NPR 120,000+ / month • 💼 Full-Time / Hybrid
+            </div>
+            <div style="font-size: 0.8rem; color: #0066ff; margin-top: 4px;">
+              📬 Delivering to: <strong>sandeep.adhikari@example.com</strong> & SMS (9841234567)
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <a href="jobs.html?q=Python+Java&location=Kathmandu" class="btn btn-outline btn-sm">View (12) Matching Jobs</a>
+            <button onclick="toggleAlert(this)" class="btn btn-primary btn-sm">Active</button>
+            <button onclick="deleteAlert(this)" class="btn btn-ghost btn-sm" style="color: #e11d48;">✕</button>
+          </div>
+        </div>
+
+        <!-- Alert 2 -->
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.2rem;">
+          <div>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+              <span class="badge badge-indigo">Active • Instant Alert</span>
+              <span style="font-size: 0.8rem; color: #64748b;">Created 5 days ago</span>
+            </div>
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">Remote Golang & Distributed Systems</h2>
+            <div style="font-size: 0.88rem; color: #475569;">
+              📍 Remote — Nepal • 💰 NPR 150,000+ / month • 💼 Software Engineering
+            </div>
+            <div style="font-size: 0.8rem; color: #0066ff; margin-top: 4px;">
+              📬 Delivering to: <strong>sandeep.adhikari@example.com</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <a href="jobs.html?q=Go+Golang&location=Remote" class="btn btn-outline btn-sm">View (4) Matching Jobs</a>
+            <button onclick="toggleAlert(this)" class="btn btn-primary btn-sm">Active</button>
+            <button onclick="deleteAlert(this)" class="btn btn-ghost btn-sm" style="color: #e11d48;">✕</button>
+          </div>
+        </div>
+
+        <!-- Alert 3 -->
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.2rem;">
+          <div>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 6px;">
+              <span class="badge badge-purple">Active • Weekly Summary</span>
+              <span style="font-size: 0.8rem; color: #64748b;">Created 1 month ago</span>
+            </div>
+            <h2 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">FinTech & Banking Software in Lalitpur</h2>
+            <div style="font-size: 0.88rem; color: #475569;">
+              📍 Lalitpur / Pulchowk • 🏢 F1Soft, eSewa, Ncell • 💼 React & Node.js
+            </div>
+            <div style="font-size: 0.8rem; color: #0066ff; margin-top: 4px;">
+              📬 Delivering to: <strong>sandeep.adhikari@example.com</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <a href="jobs.html?location=Lalitpur" class="btn btn-outline btn-sm">View (8) Matching Jobs</a>
+            <button onclick="toggleAlert(this)" class="btn btn-primary btn-sm">Active</button>
+            <button onclick="deleteAlert(this)" class="btn btn-ghost btn-sm" style="color: #e11d48;">✕</button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function toggleAlert(btn) {
+      if (btn.innerText === 'Active') {
+        btn.innerText = 'Paused';
+        btn.className = 'btn btn-outline btn-sm';
+        showToast('Job alert paused', 'info');
+      } else {
+        btn.innerText = 'Active';
+        btn.className = 'btn btn-primary btn-sm';
+        showToast('Job alert activated', 'success');
+      }
+    }
+
+    function deleteAlert(btn) {
+      if (confirm('Delete this job alert?')) {
+        btn.closest('div[style*="background: #fff"]').remove();
+        showToast('Job alert deleted', 'info');
+      }
+    }
+
+    function openCreateAlertModal() {
+      const keyword = prompt('Enter Job Keyword (e.g., Python, React, Banking):');
+      if (keyword) {
+        showToast(`Created new alert for "${keyword}"!`, 'success');
+      }
+    }
+  </script>
+</body>
+</html>

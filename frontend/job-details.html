@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Vacancy Details — JOB NEPAL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+          <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
+        <li><a href="companies.html" class="nav-link">Companies</a></li>
+        <li><a href="career.html" class="nav-link">Career</a></li>
+        <li><a href="tech-learning.html" class="nav-link">Tech Learning</a></li>
+        <li><a href="resume-builder.html" class="nav-link">Resume Builder</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-ghost btn-sm" aria-label="Toggle dark/light mode">🌙</button>
+        <a href="post-job.html" class="btn btn-crimson btn-sm">Post a Job</a>
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Job Details Container (Populated via jobs.js) -->
+  <main class="container" id="jobDetailsContainer" style="padding-bottom: 4rem;">
+    <!-- Loading placeholder skeleton -->
+    <div style="padding: 4rem 0; text-align: center;">
+      <p style="color: var(--text-muted);">Loading vacancy details from Job Nepal database...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>
+        © 2026 JOB NEPAL — Find Your Job. Build Your Future.
+      </div>
+      <div>
+        <a href="jobs.html" style="color: #94a3b8; margin-right: 1.2rem;">Back to Jobs</a>
+        <a href="resume-builder.html" style="color: #94a3b8;">Resume Builder</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

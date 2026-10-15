@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder — Build Your Professional Resume | Job Nepal</title>
+  <meta name="description"
+    content="Build a professional Nepal-focused CV and download it as an ATS-friendly PDF. Choose from Modern, Professional, Creative, Minimal, and Executive templates.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+  <style>
+    /* ==========================================================================
+       RESUME BUILDER ADVANCED STYLES & LAYOUT
+       ========================================================================== */
+    .rb-page-header {
+      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 2rem 0 1.5rem;
+    }
+
+    .rb-header-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .rb-free-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      box-shadow: 0 1px 3px rgba(16, 185, 129, 0.12);
+      flex-wrap: wrap;
+    }
+
+    .rb-free-pill {
+      background: #10b981;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .rb-free-highlight-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      font-size: 0.52em;
+      vertical-align: middle;
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+      margin-left: 6px;
+      letter-spacing: 0.5px;
+      font-weight: 800;
+    }
+
+    /* Form Rows */
+    .form-row-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Universal Workspace View Switcher Tabs (PC & Mobile Responsive) */
+    .rb-workspace-tabs,
+    .rb-mobile-tabs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-full);
+      padding: 6px 8px;
+      margin-bottom: 1.5rem;
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(10px);
+      gap: 8px;
+    }
+
+    .rb-tabs-track {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      width: 100%;
+    }
+
+    .rb-tab-btn,
+    .rb-mobile-tab-btn {
+      flex: 1;
+      border: 1.5px solid transparent;
+      background: transparent;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #64748b;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .rb-tab-btn:hover,
+    .rb-mobile-tab-btn:hover {
+      color: #0f172a;
+      background: rgba(226, 232, 240, 0.6);
+    }
+
+    .rb-tab-btn.active,
+    .rb-mobile-tab-btn.active {
+      background: #ffffff;
+      color: #0066ff;
+      border-color: #bfdbfe;
+      box-shadow: 0 3px 10px rgba(0, 102, 255, 0.12);
+    }
+
+    .rb-tabs-free-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-right: 12px;
+      border-left: 1px solid #e2e8f0;
+      padding-left: 14px;
+      flex-shrink: 0;
+    }
+
+    .rb-tabs-free-sub {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #059669;
+      white-space: nowrap;
+    }
+
+    .rb-live-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulseDot 1.4s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    /* Mobile Floating Quick Switcher */
+    .rb-mobile-floating-bar {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .rb-floating-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0, 102, 255, 0.4);
+      border: none;
+      cursor: pointer;
+      background: #0066ff;
+      color: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .rb-floating-btn:active {
+      transform: scale(0.96);
+    }
+
+    .rb-header-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .rb-header-subtitle {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 0.75rem;
+    }
+
+    .rb-sync-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      transition: all 0.3s ease;
+    }
+
+    .rb-sync-status-badge.saved {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+
+    .rb-sync-status-badge.syncing {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+      animation: pulseSync 1.2s infinite;
+    }
+
+    @keyframes pulseSync {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .rb-top-action-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Resume Completion Card */
+    .rb-completion-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .rb-completion-progress-track {
+      width: 100%;
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin: 8px 0 12px;
+    }
+
+    .rb-completion-progress-fill {
+      height: 100%;
+      width: 75%;
+      background: #0066ff;
+      border-radius: 9999px;
+      transition: width 0.4s ease, background 0.4s ease;
+    }
+
+    .rb-completion-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    /* Template Cards Grid */
+    .rb-template-selector-section {
+      margin-bottom: 2rem;
+    }
+
+    .rb-templates-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .template-card-choice {
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+      position: relative;
+    }
+
+    .template-card-choice:hover {
+      border-color: #93c5fd;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 102, 255, 0.08);
+    }
+
+    .template-card-choice.active {
+      border-color: #0066ff;
+      background: #eff6ff;
+      box-shadow: 0 6px 18px rgba(0, 102, 255, 0.12);
+    }
+
+    .template-card-choice.active::after {
+      content: "✓ Active";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background: #0066ff;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .template-choice-name {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .template-choice-desc {
+      font-size: 0.74rem;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    /* Workspace Grid Layout Modes */
+    .rb-main-workspace-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 2rem;
+      align-items: start;
+      transition: all 0.25s ease;
+    }
+
+    .rb-main-workspace-grid.view-editor-only {
+      grid-template-columns: 1fr;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .rb-main-workspace-grid.view-preview-only {
+      grid-template-columns: 1fr;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .rb-main-workspace-grid.view-split {
+      grid-template-columns: 1fr 1.05fr;
+      max-width: 100%;
+    }
+
+    /* Left Editing Form Panel */
+    .rb-editor-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    .rb-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1.75rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1.5px solid #f1f5f9;
+    }
+
+    .rb-section-header:first-of-type {
+      margin-top: 0;
+    }
+
+    .rb-section-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Right Live Preview Area */
+    .rb-preview-column {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.25s ease;
+    }
+
+    .rb-preview-top-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 8px 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .rb-zoom-group {
+      display: flex;
+      gap: 4px;
+      background: #f1f5f9;
+      padding: 2px;
+      border-radius: 6px;
+    }
+
+    .zoom-btn {
+      background: transparent;
+      border: none;
+      padding: 4px 10px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #475569;
+      transition: all 0.15s ease;
+    }
+
+    .zoom-btn.active {
+      background: #ffffff;
+      color: #0066ff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Realistic A4 Document Sheet & Scaler */
+    .resume-a4-viewport {
+      background: #475569;
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.28);
+      max-height: calc(100vh - 160px);
+      min-height: 480px;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+
+    .resume-sheet-scaler-wrap {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      transition: width 0.2s ease, height 0.2s ease;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      border-radius: 3px;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .resume-preview-sheet {
+      background: #ffffff;
+      width: 794px;
+      min-height: 1123px;
+      padding: 40px 48px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: top left;
+      transition: transform 0.2s ease;
+    }
+
+    .rb-free-tag-badge {
+      background: #ecfdf5;
+      color: #059669;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Download Dropdown */
+    .rb-download-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .rb-download-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      background: #ffffff;
+      min-width: 280px;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      overflow: hidden;
+      animation: rbFadeIn 0.18s ease-out;
+    }
+
+    @keyframes rbFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .rb-download-menu-header {
+      padding: 0.6rem 0.9rem;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+    }
+
+    .rb-download-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: none;
+      background: #ffffff;
+      text-align: left;
+      cursor: pointer;
+      border-bottom: 1px solid #f1f5f9;
+      transition: background 0.15s ease;
+    }
+
+    .rb-download-item:last-child {
+      border-bottom: none;
+    }
+
+    .rb-download-item:hover {
+      background: #f8fafc;
+    }
+
+    .rb-download-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .rb-download-item-title {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    .rb-download-item:hover .rb-download-item-title {
+      color: #0066ff;
+    }
+
+    .rb-download-item-desc {
+      font-size: 0.75rem;
+      color: #64748b;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    .rb-download-badge {
+      margin-left: auto;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Modal Overlay Styles */
+    .rb-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .rb-modal-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      animation: rbModalPop 0.2s ease-out;
+    }
+
+    @keyframes rbModalPop {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .rb-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .rb-modal-body {
+      padding: 1.5rem;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .rb-modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      background: #f8fafc;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* Trust Footer */
+    .rb-trust-footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      margin-top: 3.5rem;
+    }
+
+    .rb-trust-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr 0.8fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .rb-trust-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .rb-trust-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #0066ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+      .rb-templates-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .rb-completion-checklist-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .rb-trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .rb-split-tab-btn {
+        display: none !important;
+      }
+      .rb-tabs-free-badge {
+        display: none !important;
+      }
+      .rb-tab-btn,
+      .rb-mobile-tab-btn {
+        max-width: none !important;
+        padding: 9px 12px;
+        font-size: 0.88rem;
+      }
+      .rb-mobile-floating-bar {
+        display: block;
+      }
+      .rb-main-workspace-grid,
+      .rb-main-workspace-grid.view-split {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .rb-preview-column {
+        position: static;
+      }
+      .rb-templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .rb-completion-checklist-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .rb-trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .form-control, input, select, textarea {
+        font-size: 16px !important; /* Prevents auto-zoom on mobile iOS/Android */
+      }
+      .rb-header-title {
+        font-size: 1.6rem;
+      }
+      .rb-page-header {
+        padding: 1.25rem 0 1rem;
+      }
+      .rb-top-action-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        width: 100%;
+      }
+      .rb-top-action-bar .rb-download-dropdown {
+        grid-column: span 3;
+      }
+      .rb-top-action-bar .btn {
+        width: 100%;
+        padding: 8px 4px;
+        font-size: 0.78rem;
+        justify-content: center;
+        text-align: center;
+      }
+      .rb-top-action-bar .rb-download-dropdown button {
+        width: 100%;
+        justify-content: center;
+        padding: 9px 12px;
+      }
+      .form-row-2col {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .resume-a4-viewport {
+        padding: 10px;
+        max-height: calc(100vh - 180px);
+        min-height: 400px;
+        border-radius: var(--radius-md);
+      }
+      .rb-editor-card {
+        padding: 1.15rem;
+      }
+      .rb-completion-box {
+        padding: 1rem;
+        margin: 1rem 0 1.25rem;
+      }
+      .template-card-choice {
+        padding: 10px;
+      }
+      .template-choice-name {
+        font-size: 0.88rem;
+      }
+      .template-choice-desc {
+        font-size: 0.68rem;
+      }
+      .rb-preview-top-toolbar {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+      .rb-preview-controls-right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 6px;
+      }
+      .rb-modal-box {
+        max-width: 96vw !important;
+        width: 96% !important;
+        margin: 10px auto;
+      }
+      .rb-modal-header,
+      .rb-modal-body,
+      .rb-modal-footer {
+        padding: 1rem;
+      }
+      .rb-trust-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .rb-header-title {
+        font-size: 1.35rem;
+      }
+      .rb-templates-grid {
+        grid-template-columns: 1fr;
+      }
+      .rb-completion-checklist-grid {
+        grid-template-columns: 1fr;
+      }
+      .rb-top-action-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .rb-top-action-bar .rb-download-dropdown {
+        grid-column: span 2;
+      }
+      .rb-tab-btn,
+      .rb-mobile-tab-btn {
+        padding: 8px 8px;
+        font-size: 0.82rem;
+      }
+      .rb-tab-text {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* ==========================================================================
+       A4 PRINT STYLES FOR CLEAN PDF EXPORT
+       ========================================================================== */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      .site-header, .site-footer, .rb-page-header, .rb-completion-box,
+      .rb-template-selector-section, .rb-editor-card, .rb-preview-top-toolbar,
+      .rb-trust-footer, .rb-modal-overlay, .navbar, footer, header {
+        display: none !important;
+      }
+      .rb-main-workspace-grid, .rb-preview-column, .resume-a4-viewport {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+      #resumeLivePreview, #resumeLivePreview * {
+        visibility: visible !important;
+      }
+      #resumeLivePreview {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 14mm !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+          <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+        </div>
+      </a>
+
+      <!-- Center Nav Links -->
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../jobs.html" class="nav-link">Find Jobs</a></li>
+        <li><a href="../companies.html" class="nav-link">Companies</a></li>
+        <li><a href="../post-job.html" class="nav-link">Post a Job</a></li>
+        <li><a href="resume-builder.html" class="nav-link active">Resume Builder</a></li>
+        <li><a href="../career.html" class="nav-link">Resources</a></li>
+      </ul>
+
+      <!-- Right Action & Country Dropdown -->
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" aria-label="Search" title="Search">🔍</button>
+        <button class="btn btn-ghost btn-sm" aria-label="Notifications" title="Notifications">🔔</button>
+        <div class="country-pill-dropdown">
+          <button id="countryDropdownBtn" class="country-pill" aria-label="Select Country" aria-expanded="false"
+            onclick="toggleCountryDropdown(event)">
+            <span id="currentCountryFlag">🇳🇵</span> <span id="currentCountryName">Nepal</span> ▾
+          </button>
+          <div id="countryDropdownMenu" class="country-dropdown-menu">
+            <div class="country-dropdown-header">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-main);">Select Region /
+                Country</span>
+            </div>
+            <div class="country-search-box">
+              <input type="text" id="countrySearchInput" placeholder="🔍 Search country..."
+                oninput="filterCountries(this.value)">
+            </div>
+            <div class="country-list" id="countryList">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+        </div>
+        <a href="../login.html" class="btn btn-primary btn-sm"
+          style="border-radius: var(--radius-full); padding: 0.45rem 1.25rem;">
+          Login / Sign Up
+        </a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation matching Dashboard Integration (Req 21) -->
+  <div style="background: #ffffff; border-bottom: 1px solid #f1f5f9; padding: 0.65rem 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: #64748b;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="../index.html" style="color: #64748b; text-decoration: none;">Home</a>
+        <span>›</span>
+        <a href="dashboard.html" style="color: #64748b; text-decoration: none;">Job Seeker Dashboard</a>
+        <span>›</span>
+        <span style="color: #0066ff; font-weight: 700;">Resume Builder</span>
+      </div>
+      <div>
+        <a href="../jobs.html" style="color: #0066ff; font-weight: 700; text-decoration: none;">Apply to Verified Jobs with this CV →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. RESUME BUILDER HEADER (Requirement 1) -->
+  <section class="rb-page-header">
+    <div class="container rb-header-grid">
+      <div>
+        <div class="rb-free-banner">
+          <span class="rb-free-pill">100% Free Forever</span>
+          <span>No Watermark • No Paywall • Free PDF & Word Export • No Credit Card</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
+          <h1 class="rb-header-title">Create Your Professional Resume <span class="rb-free-highlight-tag">FREE</span></h1>
+          <span class="badge badge-primary" id="currentResumeTitleBadge" style="font-size: 0.8rem; padding: 4px 10px;">Software Developer CV</span>
+        </div>
+        <p class="rb-header-subtitle">Build a verified Nepal & global ATS-friendly CV and download for free in PDF, DOCX, or TXT.</p>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span id="autoSyncStatusBadge" class="rb-sync-status-badge saved">Auto-Saved ✓</span>
+          <span id="selectedTemplateBadge" style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Active Template: Modern</span>
+          <span class="badge" style="background: #ecfdf5; color: #059669; font-size: 0.72rem; font-weight: 700; border: 1px solid #a7f3d0;">✓ 100% Free ATS Format</span>
+        </div>
+      </div>
+
+      <!-- Top Action Buttons (Requirement 1 & 14) -->
+      <div class="rb-top-action-bar">
+        <!-- My Resumes Manager Button -->
+        <button type="button" class="btn btn-outline btn-sm" onclick="openResumesManager()" title="Manage Resume Versions">
+          📂 My Resumes
+        </button>
+
+        <!-- Save Resume Button -->
+        <button type="button" class="btn btn-outline btn-sm" onclick="saveCurrentResume()" title="Save CV to your account">
+          💾 Save Resume
+        </button>
+
+        <!-- Preview Modal Button -->
+        <button type="button" class="btn btn-outline btn-sm" onclick="openFullScreenPreview()" title="Open Full-Screen Preview">
+          👁 Preview
+        </button>
+
+        <!-- Direct PDF Download Button -->
+        <button type="button" class="btn btn-outline btn-sm" onclick="printOrDownloadPDF()" title="Download PDF CV">
+          📄 Free PDF
+        </button>
+
+        <!-- Print Button -->
+        <button type="button" class="btn btn-outline btn-sm" onclick="printOrDownloadPDF()" title="Print CV">
+          🖨 Print
+        </button>
+
+        <!-- Share Button -->
+        <button type="button" class="btn btn-outline btn-sm" onclick="openShareModal()" title="Share Resume Online">
+          🔗 Share
+        </button>
+
+        <!-- Download CV Multi-Format Dropdown (PDF, Word, Text) -->
+        <div class="rb-download-dropdown">
+          <button type="button" class="btn btn-primary btn-sm" onclick="toggleDownloadDropdown(event, 'topHeaderDownloadMenu')" style="display: inline-flex; align-items: center; gap: 6px; font-weight: 700; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);">
+            <span>📥</span> Free Download <span style="font-size: 0.72rem; margin-left: 2px;">▼</span>
+          </button>
+          <div class="rb-download-menu" id="topHeaderDownloadMenu">
+            <div class="rb-download-menu-header">Select Free Export Format</div>
+            <button type="button" class="rb-download-item" onclick="downloadAsPDF()">
+              <div class="rb-download-icon" style="background: #fee2e2; color: #dc2626;">PDF</div>
+              <div>
+                <div class="rb-download-item-title">PDF Document (.pdf)</div>
+                <div class="rb-download-item-desc">Print-ready standard ATS format • 100% Free</div>
+              </div>
+              <span class="rb-download-badge" style="background: #fef2f2; color: #dc2626;">Free</span>
+            </button>
+            <button type="button" class="rb-download-item" onclick="downloadAsWord()">
+              <div class="rb-download-icon" style="background: #dbeafe; color: #2563eb;">DOC</div>
+              <div>
+                <div class="rb-download-item-title">Word Document (.docx)</div>
+                <div class="rb-download-item-desc">Fully editable in Word & Docs • 100% Free</div>
+              </div>
+              <span class="rb-download-badge" style="background: #eff6ff; color: #1d4ed8;">Free</span>
+            </button>
+            <button type="button" class="rb-download-item" onclick="downloadAsText()">
+              <div class="rb-download-icon" style="background: #f1f5f9; color: #475569;">TXT</div>
+              <div>
+                <div class="rb-download-item-title">Plain Text (.txt)</div>
+                <div class="rb-download-item-desc">Clean raw text for job portals • 100% Free</div>
+              </div>
+              <span class="rb-download-badge" style="background: #f8fafc; color: #475569;">Free</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-top: 1.5rem; padding-bottom: 3rem;">
+
+    <!-- 16. RESUME COMPLETION INDICATOR (Requirement 16) -->
+    <div class="rb-completion-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <strong id="resumeCompletionText" style="font-size: 1.05rem; color: #0f172a;">Resume Completion: 85%</strong>
+          <span style="font-size: 0.8rem; color: #64748b; margin-left: 8px;">Follow the checklist below to maximize recruiter visibility.</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-sm" onclick="completeResumeGuide()" style="border-color: #0066ff; color: #0066ff; font-weight: 700;">
+          Complete Resume →
+        </button>
+      </div>
+
+      <div class="rb-completion-progress-track">
+        <div id="resumeCompletionBar" class="rb-completion-progress-fill"></div>
+      </div>
+
+      <div class="rb-completion-checklist-grid" id="completionChecklist">
+        <!-- Rendered dynamically via js/resume-builder.js -->
+      </div>
+    </div>
+
+    <!-- 2. TEMPLATE DESIGN SELECTOR (Requirement 2 & 13) -->
+    <section class="rb-template-selector-section">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">
+          Select Template Design
+        </h2>
+        <span style="font-size: 0.82rem; color: #64748b;">Switch designs instantly. Your information remains 100% saved.</span>
+      </div>
+
+      <div class="rb-templates-grid">
+        <!-- Modern -->
+        <div class="template-card-choice active" data-template="Modern" onclick="selectTemplate('Modern', this)">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div class="template-choice-name" style="color: #0066ff;">Modern</div>
+            <span class="rb-free-tag-badge">Free</span>
+          </div>
+          <div class="template-choice-desc">Clean modern layout with blue accents, profile section, skills cards and timeline experience.</div>
+        </div>
+
+        <!-- Professional -->
+        <div class="template-card-choice" data-template="Professional" onclick="selectTemplate('Professional', this)">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div class="template-choice-name" style="color: #0f2942;">Professional</div>
+            <span class="rb-free-tag-badge">Free</span>
+          </div>
+          <div class="template-choice-desc">Traditional professional CV layout suitable for corporate, banking, and office jobs.</div>
+        </div>
+
+        <!-- Creative -->
+        <div class="template-card-choice" data-template="Creative" onclick="selectTemplate('Creative', this)">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div class="template-choice-name" style="color: #2563eb;">Creative</div>
+            <span class="rb-free-tag-badge">Free</span>
+          </div>
+          <div class="template-choice-desc">Modern creative layout with visual sections, skill indicators and attractive typography.</div>
+        </div>
+
+        <!-- Minimal -->
+        <div class="template-card-choice" data-template="Minimal" onclick="selectTemplate('Minimal', this)">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div class="template-choice-name" style="color: #111827;">Minimal</div>
+            <span class="rb-free-tag-badge">Free</span>
+          </div>
+          <div class="template-choice-desc">Simple, clean, highly readable one-page resume with minimal decoration.</div>
+        </div>
+
+        <!-- Executive -->
+        <div class="template-card-choice" data-template="Executive" onclick="selectTemplate('Executive', this)">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div class="template-choice-name" style="color: #065f46;">Executive</div>
+            <span class="rb-free-tag-badge">Free</span>
+          </div>
+          <div class="template-choice-desc">Premium executive-style layout designed for experienced professionals and managers.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Universal Workspace View Switcher (Responsive on PC & Mobile) -->
+    <div class="rb-workspace-tabs rb-mobile-tabs" id="rbWorkspaceTabs">
+      <div class="rb-tabs-track">
+        <button type="button" class="rb-tab-btn rb-mobile-tab-btn active" id="tabBtnEditor" onclick="setWorkspaceView('editor')">
+          <span class="rb-tab-icon">✏️</span>
+          <span class="rb-tab-text">Edit Details</span>
+        </button>
+        <button type="button" class="rb-tab-btn rb-mobile-tab-btn" id="tabBtnPreview" onclick="setWorkspaceView('preview')">
+          <span class="rb-tab-icon">👁️</span>
+          <span class="rb-tab-text">Live A4 Preview</span>
+          <span class="rb-live-dot"></span>
+        </button>
+        <button type="button" class="rb-tab-btn rb-mobile-tab-btn rb-split-tab-btn" id="tabBtnSplit" onclick="setWorkspaceView('split')">
+          <span class="rb-tab-icon">🖥️</span>
+          <span class="rb-tab-text">Side-by-Side (Split)</span>
+        </button>
+      </div>
+
+      <div class="rb-tabs-free-badge">
+        <span class="rb-free-pill">100% Free</span>
+        <span class="rb-tabs-free-sub">Nepal ATS Standard</span>
+      </div>
+    </div>
+
+    <!-- MAIN WORKSPACE: LEFT = EDIT DETAILS, RIGHT = LIVE A4 PREVIEW -->
+    <div class="rb-main-workspace-grid">
+
+      <!-- LEFT: EDIT DETAILS (Requirement 3 to 10) -->
+      <div class="rb-editor-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">
+              ✏️ Edit Details
+            </h2>
+            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">
+              Enter your information below • Live updates to your free ATS A4 CV
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm rb-quick-preview-btn" onclick="setWorkspaceView('preview')" style="font-weight: 700; color: #0066ff; border-color: #bfdbfe; background: #eff6ff;">
+            👁️ Live A4 Preview →
+          </button>
+        </div>
+
+        <form id="resumeForm" onsubmit="event.preventDefault();">
+          <!-- 3. PERSONAL INFORMATION -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">👤 Personal Information</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="resFullName" class="form-control" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Professional Title / Headline</label>
+            <input type="text" id="resTitle" class="form-control" placeholder="Full Stack Developer | Python Developer">
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" id="resEmail" class="form-control" placeholder="example@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number *</label>
+              <input type="tel" id="resPhone" class="form-control" placeholder="98XXXXXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Location (Nepal) *</label>
+            <select id="resLocation" class="form-control">
+              <option value="Dumkibas">Dumkibas</option>
+              <option value="Kathmandu" selected>Kathmandu</option>
+              <option value="Lalitpur">Lalitpur</option>
+              <option value="Bhaktapur">Bhaktapur</option>
+              <option value="Pokhara">Pokhara</option>
+              <option value="Chitwan">Chitwan</option>
+              <option value="Butwal">Butwal</option>
+              <option value="Biratnagar">Biratnagar</option>
+              <option value="Birgunj">Birgunj</option>
+              <option value="Dharan">Dharan</option>
+              <option value="Hetauda">Hetauda</option>
+              <option value="Nepalgunj">Nepalgunj</option>
+              <option value="Dhangadhi">Dhangadhi</option>
+              <option value="Janakpur">Janakpur</option>
+              <option value="Other Nepal Location">Other Nepal Location</option>
+            </select>
+          </div>
+
+          <!-- 4. ONLINE PROFILES -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">🌐 Online Profiles & Portfolio</span>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addLink()">+ Add Link</button>
+          </div>
+          <div id="linksContainer">
+            <!-- Dynamic profile links rendered here -->
+          </div>
+
+          <!-- 5. CAREER OBJECTIVE -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">🎯 Career Objective</span>
+            <span id="objectiveCharCount" style="font-size: 0.8rem; color: #64748b; font-weight: 600;">0 / 500</span>
+          </div>
+          <div class="form-group">
+            <textarea id="resObjective" class="form-control" rows="4" maxlength="500" placeholder="Write a short professional career objective..."></textarea>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; align-items: center;">
+              <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">Quick Presets:</span>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 8px; background: #f1f5f9;" onclick="applyObjectiveTemplate('software')">Software Developer</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 8px; background: #f1f5f9;" onclick="applyObjectiveTemplate('management')">Management / Banking</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 8px; background: #f1f5f9;" onclick="applyObjectiveTemplate('fresh')">Fresh Graduate</button>
+            </div>
+          </div>
+
+          <!-- 6. PRIMARY WORK EXPERIENCE -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">💼 Primary Work Experience</span>
+            <button type="button" class="btn btn-primary btn-sm" onclick="addExperience()">+ Add Experience</button>
+          </div>
+          <div id="experienceContainer">
+            <!-- Dynamic work experience cards rendered here -->
+          </div>
+
+          <!-- 7. EDUCATION & DEGREE -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">🎓 Education & Degree</span>
+            <button type="button" class="btn btn-primary btn-sm" onclick="addEducation()">+ Add Education</button>
+          </div>
+          <datalist id="degreeSuggestions">
+            <option value="Bachelor in Computer Engineering">
+            <option value="Bachelor of Computer Application (BCA)">
+            <option value="Bachelor of Information Technology (BIT)">
+            <option value="BBA / Management">
+            <option value="Master's Degree">
+            <option value="Diploma">
+            <option value="High School (+2)">
+          </datalist>
+          <div id="educationContainer">
+            <!-- Dynamic education cards rendered here -->
+          </div>
+
+          <!-- 8. TECHNICAL SKILLS & TOOLS -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">🛠 Technical Skills & Tools</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" style="font-size: 0.8rem;">Type skills (separated by comma or press Enter)</label>
+            <input type="text" id="skillTagInput" class="form-control" placeholder="e.g. HTML, CSS, JavaScript, React, Python, Java, SQL, Git">
+            <div id="skillTagsList" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+              <!-- Interactive tags HTML × | CSS × rendered here -->
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; align-items: center;">
+              <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">Add Popular:</span>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('Python')">+ Python</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('React')">+ React</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('Node.js')">+ Node.js</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('SQL')">+ SQL</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('Java')">+ Java</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('Docker')">+ Docker</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('Git')">+ Git</button>
+              <button type="button" class="btn btn-ghost btn-sm" style="font-size: 0.72rem; padding: 2px 7px; background: #f8fafc; border: 1px solid #e2e8f0;" onclick="addSuggestedSkill('Figma')">+ Figma</button>
+            </div>
+          </div>
+
+          <!-- 9. LANGUAGES -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">🗣 Languages</span>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addLanguage()">+ Add Language</button>
+          </div>
+          <div id="languagesContainer">
+            <!-- Dynamic language items rendered here -->
+          </div>
+
+          <!-- 10. REFERENCES -->
+          <div class="rb-section-header">
+            <span class="rb-section-title">🤝 Professional References</span>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addReference()">+ Add Reference</button>
+          </div>
+          <div style="margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="chkAvailableUponRequest" onchange="toggleAvailableUponRequest(this.checked)">
+            <label for="chkAvailableUponRequest" style="font-size: 0.85rem; font-weight: 700; color: #334155; cursor: pointer;">
+              Available upon request (Hide personal referee details)
+            </label>
+          </div>
+          <div id="referencesContainer">
+            <!-- Dynamic reference cards rendered here -->
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: LIVE A4 DOCUMENT PREVIEW (Requirement 11 & 12) -->
+      <div class="rb-preview-column">
+        <!-- Preview Toolbar -->
+        <div class="rb-preview-top-toolbar">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-weight: 800; font-size: 0.95rem; color: #0f172a; display: flex; align-items: center; gap: 6px;">
+              👁️ Live A4 Preview
+              <span class="rb-live-dot"></span>
+            </span>
+            <span class="badge" style="background: #ecfdf5; color: #059669; font-size: 0.7rem; font-weight: 800; border: 1px solid #a7f3d0;">100% Free</span>
+          </div>
+
+          <div class="rb-preview-controls-right" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+            <!-- Quick Edit button in Preview header -->
+            <button type="button" class="btn btn-outline btn-sm rb-quick-edit-btn" onclick="setWorkspaceView('editor')" title="Switch to editing mode" style="font-weight: 700; color: #0066ff; border-color: #bfdbfe; background: #eff6ff;">
+              ✏️ Edit Details
+            </button>
+
+            <!-- Zoom Controls -->
+            <div class="rb-zoom-group">
+              <button type="button" class="zoom-btn active" data-zoom="fit" onclick="setPreviewZoom('fit')" title="Fit to Screen Width">Fit</button>
+              <button type="button" class="zoom-btn" data-zoom="75" onclick="setPreviewZoom(75)">75%</button>
+              <button type="button" class="zoom-btn" data-zoom="100" onclick="setPreviewZoom(100)">100%</button>
+            </div>
+
+            <!-- Full-Screen Preview Action -->
+            <button type="button" class="btn btn-outline btn-sm" onclick="openFullScreenPreview()" title="Open larger preview">
+              ⛶ Expand
+            </button>
+
+            <!-- Direct Free PDF Download -->
+            <button type="button" class="btn btn-primary btn-sm" onclick="printOrDownloadPDF()" style="font-weight: 700; box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);">
+              📄 Free PDF
+            </button>
+
+            <!-- Quick Download Dropdown in preview header -->
+            <div class="rb-download-dropdown">
+              <button type="button" class="btn btn-outline btn-sm" onclick="toggleDownloadDropdown(event, 'previewToolbarDownloadMenuJobSeeker')" style="display: inline-flex; align-items: center; gap: 4px; font-weight: 700; font-size: 0.8rem; padding: 5px 8px;">
+                <span>📥</span> Formats <span style="font-size: 0.65rem;">▼</span>
+              </button>
+              <div class="rb-download-menu" id="previewToolbarDownloadMenuJobSeeker">
+                <div class="rb-download-menu-header">Select Free Export Format</div>
+                <button type="button" class="rb-download-item" onclick="downloadAsPDF()">
+                  <div class="rb-download-icon" style="background: #fee2e2; color: #dc2626;">PDF</div>
+                  <div>
+                    <div class="rb-download-item-title">PDF Document (.pdf)</div>
+                    <div class="rb-download-item-desc">Print-ready standard ATS format • Free</div>
+                  </div>
+                  <span class="rb-download-badge" style="background: #fef2f2; color: #dc2626;">Popular</span>
+                </button>
+                <button type="button" class="rb-download-item" onclick="downloadAsWord()">
+                  <div class="rb-download-icon" style="background: #dbeafe; color: #2563eb;">DOC</div>
+                  <div>
+                    <div class="rb-download-item-title">Word Document (.docx)</div>
+                    <div class="rb-download-item-desc">Fully editable in Word & Docs • Free</div>
+                  </div>
+                  <span class="rb-download-badge" style="background: #eff6ff; color: #1d4ed8;">Editable</span>
+                </button>
+                <button type="button" class="rb-download-item" onclick="downloadAsText()">
+                  <div class="rb-download-icon" style="background: #f1f5f9; color: #475569;">TXT</div>
+                  <div>
+                    <div class="rb-download-item-title">Plain Text (.txt)</div>
+                    <div class="rb-download-item-desc">Clean raw text for job portals • Free</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Realistic A4 Viewport with Responsive Scaler Wrapper -->
+        <div class="resume-a4-viewport" id="resumeA4Viewport">
+          <div class="resume-sheet-scaler-wrap" id="resumeSheetScalerWrap">
+            <div class="resume-preview-sheet" id="resumeLivePreview">
+              <!-- Dynamic A4 content injected via js/resume-builder.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mobile Floating Quick Switcher Button (Bottom-right on mobile screens) -->
+    <div class="rb-mobile-floating-bar" id="rbMobileFloatingBar">
+      <button type="button" class="rb-floating-btn" id="rbFloatingToggleBtn" onclick="toggleMobileView()">
+        <span id="rbFloatingIcon">👁️</span> <span id="rbFloatingLabel">View Live Preview</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       MODALS: FULL-SCREEN PREVIEW, SHARE CV, MY RESUMES MANAGER
+       ========================================================================== -->
+
+  <!-- 1. FULL-SCREEN PREVIEW MODAL (Requirement 14) -->
+  <div class="rb-modal-overlay" id="fullScreenPreviewModal">
+    <div class="rb-modal-box" style="max-width: 900px; width: 95%;">
+      <div class="rb-modal-header">
+        <div style="font-weight: 800; font-size: 1.15rem; color: #0f172a;">Full-Screen A4 Resume Preview</div>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="closeModal('fullScreenPreviewModal')" style="font-size: 1.25rem;">✕</button>
+      </div>
+      <div class="rb-modal-body" style="background: #475569; display: flex; justify-content: center; padding: 24px; overflow-x: auto;">
+        <div class="resume-sheet-scaler-wrap" id="modalResumeSheetScalerWrap">
+          <div class="resume-preview-sheet" id="modalResumeLivePreview">
+            <!-- Injected via openFullScreenPreview() -->
+          </div>
+        </div>
+      </div>
+      <div class="rb-modal-footer">
+        <button type="button" class="btn btn-outline" onclick="closeModal('fullScreenPreviewModal')">Close</button>
+        <button type="button" class="btn btn-primary" onclick="printOrDownloadPDF()">📄 Free PDF / Print</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SHARE RESUME MODAL (Requirement 14) -->
+  <div class="rb-modal-overlay" id="shareResumeModal">
+    <div class="rb-modal-box">
+      <div class="rb-modal-header">
+        <div style="font-weight: 800; font-size: 1.15rem; color: #0f172a;">Share Your Resume Link</div>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="closeModal('shareResumeModal')" style="font-size: 1.25rem;">✕</button>
+      </div>
+      <div class="rb-modal-body">
+        <p style="font-size: 0.88rem; color: #475569; margin-bottom: 12px;">
+          Anyone with this private link can view your verified ATS resume document directly in high-definition:
+        </p>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 1.25rem;">
+          <input type="text" id="shareResumeUrlInput" class="form-control" readonly style="background: #f8fafc; font-weight: 600;">
+          <button type="button" class="btn btn-primary" onclick="copyShareUrl()">Copy</button>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 1.25rem;" id="shareQrCodeBox">
+          <!-- Dynamic QR code rendered here -->
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 10px;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="shareViaSocial('whatsapp')">💬 WhatsApp</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="shareViaSocial('linkedin')">💼 LinkedIn</button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="shareViaSocial('email')">✉️ Email</button>
+        </div>
+      </div>
+      <div class="rb-modal-footer">
+        <button type="button" class="btn btn-outline" onclick="closeModal('shareResumeModal')">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. MY RESUMES MANAGER MODAL (Requirement 15) -->
+  <div class="rb-modal-overlay" id="resumesManagerModal">
+    <div class="rb-modal-box" style="max-width: 680px;">
+      <div class="rb-modal-header">
+        <div>
+          <div style="font-weight: 800; font-size: 1.15rem; color: #0f172a;">My Resumes (Version System)</div>
+          <div style="font-size: 0.8rem; color: #64748b;">Manage targeted CV versions for different job roles</div>
+        </div>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="closeModal('resumesManagerModal')" style="font-size: 1.25rem;">✕</button>
+      </div>
+      <div class="rb-modal-body">
+        <div id="myResumesListContainer">
+          <!-- Rendered via renderResumesManagerList() -->
+        </div>
+      </div>
+      <div class="rb-modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn btn-outline" onclick="createNewResume()">+ Create New CV</button>
+        <button type="button" class="btn btn-primary" onclick="closeModal('resumesManagerModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Footer Bar -->
+  <section class="rb-trust-footer">
+    <div class="container rb-trust-grid">
+      <div>
+        <div style="font-weight: 800; font-size: 1.15rem; color: #0066ff;">JOB NEPAL</div>
+        <div style="font-size: 0.8rem; color: #64748b;">Find Your Job. Build Your Future.</div>
+      </div>
+
+      <div class="rb-trust-item">
+        <div class="rb-trust-icon" style="background: #ecfdf5; color: #059669;">🎁</div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">100% Free Forever</div>
+          <div style="font-size: 0.78rem; color: #64748b;">No watermark or hidden fees</div>
+        </div>
+      </div>
+
+      <div class="rb-trust-item">
+        <div class="rb-trust-icon">👤</div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">For Job Seekers</div>
+          <div style="font-size: 0.78rem; color: #64748b;">Your career matters</div>
+        </div>
+      </div>
+
+      <div class="rb-trust-item">
+        <div class="rb-trust-icon">💼</div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">For Employers</div>
+          <div style="font-size: 0.78rem; color: #64748b;">Find the right talent</div>
+        </div>
+      </div>
+
+      <div class="rb-trust-item">
+        <div class="rb-trust-icon">🤝</div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">For a Better Nepal</div>
+          <div style="font-size: 0.78rem; color: #64748b;">Together we grow</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; margin-bottom: 4px;">Follow Us</div>
+        <div style="display: flex; gap: 10px; font-size: 1rem; color: #0066ff;">
+          <span>🌐</span> <span>💼</span> <span>🐦</span> <span>📺</span> <span>📸</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 JOB NEPAL — Find Your Job. Build Your Future.</div>
+      <div>
+        <a href="../jobs.html" style="color: #94a3b8; margin-right: 1.2rem;">Find Jobs</a>
+        <a href="../companies.html" style="color: #94a3b8;">Companies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/resume-builder.js"></script>
+</body>
+
+</html>

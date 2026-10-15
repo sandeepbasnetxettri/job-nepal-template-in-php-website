@@ -1,0 +1,517 @@
+/* ==========================================================================
+   JOB NEPAL — Dedicated Login Page Stylesheet (css/login.css)
+   Clean, modern, responsive styling with Nepal-inspired royal blue branding
+   ========================================================================== */
+
+/* Main Page Container */
+.login-page-main {
+  max-width: 540px;
+  margin: 2rem auto 3.5rem;
+  padding: 0 1.25rem;
+  position: relative;
+}
+
+/* Central Login Card */
+.login-card-container {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-xl, 20px);
+  padding: 2.5rem 2.2rem;
+  box-shadow: 0 10px 30px rgba(0, 56, 141, 0.08);
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Card Header Section */
+.login-header-wrap {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.login-auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  color: #0066ff;
+  border: 1px solid #bfdbfe;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-card-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.login-card-subtitle {
+  color: var(--text-muted, #64748b);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+/* Role Selector Tabs (Job Seeker | Company / Employer) */
+.auth-role-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-subtle, #f1f5f9);
+  padding: 5px;
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--border-color, #e2e8f0);
+  margin-bottom: 1.25rem;
+  gap: 6px;
+}
+
+.auth-role-tab {
+  border: none;
+  background: transparent;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-role-tab:hover {
+  color: var(--text-main, #0f172a);
+}
+
+.auth-role-tab.active {
+  background: var(--bg-surface, #ffffff);
+  color: var(--primary, #0066ff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Role Context Banner */
+.role-info-banner {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md, 10px);
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.4rem;
+  font-size: 0.84rem;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.role-info-banner.employer-mode {
+  background: #fff1f2;
+  border-color: #fecdd3;
+  color: #9f1239;
+}
+
+/* Form Group, Label, and Input Control Base Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 0.45rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main, #0f172a);
+  background-color: var(--bg-surface, #ffffff);
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  border-radius: var(--radius-md, 10px);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-control::placeholder {
+  color: var(--text-light, #94a3b8);
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  border-color: var(--primary, #0066ff);
+  box-shadow: 0 0 0 3.5px rgba(0, 102, 255, 0.12);
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3.5px rgba(59, 130, 246, 0.2);
+}
+
+/* Password Input & Show/Hide Button */
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrap input {
+  padding-right: 2.85rem !important;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted, #64748b);
+  padding: 6px 8px;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm, 6px);
+  transition: var(--transition, 0.2s ease);
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary, #0066ff);
+  background: var(--bg-subtle, #f1f5f9);
+}
+
+/* Form Options (Remember Me & Forgot Password) */
+.login-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 0.88rem;
+}
+
+.login-remember-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-main, #0f172a);
+  font-weight: 500;
+  user-select: none;
+}
+
+.login-remember-label input[type="checkbox"] {
+  accent-color: var(--primary, #0066ff);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.login-forgot-link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--primary, #0066ff);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-forgot-link:hover {
+  text-decoration: underline;
+  color: var(--primary-hover, #0052cc);
+}
+
+/* Primary Submit Button */
+.btn-login-submit {
+  width: 100%;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-md, 10px);
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-login-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.35);
+}
+
+.btn-login-submit.employer-submit {
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+}
+
+.btn-login-submit.employer-submit:hover {
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+}
+
+/* 1-Click Quick Demo Box */
+.login-demo-box {
+  background: var(--bg-subtle, #f8fafc);
+  border: 1px dashed var(--border-color, #cbd5e1);
+  border-radius: var(--radius-md, 10px);
+  padding: 0.9rem;
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.login-demo-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.login-demo-buttons-wrap {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-demo-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color, #cbd5e1);
+  background: #ffffff;
+  color: var(--text-main, #334155);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-demo-pill:hover {
+  border-color: var(--primary, #0066ff);
+  color: var(--primary, #0066ff);
+  background: #f0f7ff;
+}
+
+/* Footer / Create Account Section */
+.login-footer-section {
+  text-align: center;
+  margin-top: 1.75rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.login-footer-text {
+  font-size: 0.92rem;
+  color: var(--text-muted, #64748b);
+  margin-bottom: 0.9rem;
+}
+
+.login-register-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 0.6rem;
+}
+
+.btn-register-choice {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  text-align: center;
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: #ffffff;
+  color: var(--text-main, #0f172a);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-register-choice:hover {
+  border-color: var(--primary, #0066ff);
+  color: var(--primary, #0066ff);
+  background: #f0f7ff;
+}
+
+/* Field Validation Errors */
+.field-error-msg {
+  color: #dc2626;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 5px;
+  display: none;
+}
+
+.field-error-msg.active {
+  display: block;
+}
+
+.form-control.input-error {
+  border-color: #dc2626 !important;
+  background-color: #fff5f5;
+}
+
+/* Modal Popup for Forgot Password */
+.auth-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.auth-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.auth-modal-box {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-xl, 20px);
+  padding: 2.2rem;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+.auth-modal-backdrop.active .auth-modal-box {
+  transform: translateY(0);
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--text-muted, #94a3b8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  color: var(--text-main, #0f172a);
+  background: var(--bg-subtle, #f1f5f9);
+}
+
+/* ==========================================================================
+   Mobile Responsive Rules for Login Page
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .login-page-main {
+    margin: 1.5rem auto 2.5rem;
+    padding: 0 1rem;
+  }
+  .login-card-container {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-lg, 16px);
+  }
+  .login-card-title {
+    font-size: 1.75rem;
+  }
+  .login-card-subtitle {
+    font-size: 0.88rem;
+  }
+  .login-register-grid {
+    grid-template-columns: 1fr;
+  }
+  .auth-modal-box {
+    padding: 1.6rem 1.25rem;
+    margin: 0 0.75rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .login-page-main {
+    margin: 1rem auto 2rem;
+    padding: 0 0.75rem;
+  }
+  .login-card-container {
+    padding: 1.4rem 0.95rem;
+  }
+  .login-card-title {
+    font-size: 1.5rem;
+  }
+  .auth-role-tabs {
+    gap: 4px;
+    padding: 4px;
+  }
+  .auth-role-tab {
+    padding: 0.55rem 0.35rem;
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+  .role-info-banner {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.78rem;
+  }
+  .login-options-row {
+    margin-bottom: 1.25rem;
+    font-size: 0.84rem;
+  }
+  .login-demo-box {
+    padding: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  .login-demo-buttons-wrap {
+    flex-direction: column;
+  }
+  .btn-demo-pill {
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+  .btn-login-submit {
+    font-size: 0.98rem;
+    padding: 0.75rem 1.25rem;
+  }
+  .btn-register-choice {
+    font-size: 0.82rem;
+    padding: 0.6rem 0.75rem;
+  }
+}

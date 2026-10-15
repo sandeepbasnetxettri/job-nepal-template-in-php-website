@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Learning — Learn In-Demand Skills. Build Your Future | Job Nepal</title>
+  <meta name="description" content="Access high-quality developer courses, learning paths, and programming resources in Nepal.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+        </div>
+      </a>
+
+      <!-- Center Nav Links -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+        <li><a href="companies.html" class="nav-link">Companies</a></li>
+        <li><a href="career.html" class="nav-link">Career</a></li>
+        <li><a href="tech-learning.html" class="nav-link active">Tech Learning</a></li>
+        <li><a href="resume-builder.html" class="nav-link">Resume Builder</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-primary btn-sm" style="border-radius: var(--radius-full); padding: 0.45rem 1.25rem;">
+          Login / Sign Up
+        </a>
+        <div class="country-pill-dropdown">
+          <button id="countryDropdownBtn" class="country-pill" aria-label="Select Country" aria-expanded="false" onclick="toggleCountryDropdown(event)">
+            <span id="currentCountryFlag">🇳🇵</span> <span id="currentCountryName">Nepal</span> ▾
+          </button>
+          <div id="countryDropdownMenu" class="country-dropdown-menu">
+            <div class="country-dropdown-header">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-main);">Select Region / Country</span>
+            </div>
+            <div class="country-search-box">
+              <input type="text" id="countrySearchInput" placeholder="🔍 Search country..." oninput="filterCountries(this.value)">
+            </div>
+            <div class="country-list" id="countryList">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Banner matching Screenshot 4 -->
+  <section style="background: linear-gradient(135deg, #092c6b 0%, #1d4ed8 100%); color: #ffffff; padding: 4.5rem 0 3.5rem;">
+    <div class="container" style="max-width: 920px;">
+      <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Tech Learning</h1>
+      <h2 style="font-size: 1.35rem; font-weight: 600; color: #93c5fd; margin-bottom: 0.85rem;">Learn In-Demand Skills. Build Your Future.</h2>
+      <p style="color: #cbd5e1; font-size: 1rem; max-width: 620px; line-height: 1.6; margin-bottom: 2rem;">
+        Access high-quality courses, tutorials, and resources to upgrade your skills and grow in the tech world.
+      </p>
+
+      <!-- Course Search Bar -->
+      <div style="background: #ffffff; border-radius: var(--radius-md); padding: 0.35rem; display: flex; gap: 8px; max-width: 600px; box-shadow: var(--shadow-xl);">
+        <div style="display: flex; align-items: center; gap: 8px; padding-left: 10px; flex: 1;">
+          <span style="color: #94a3b8;">🔍</span>
+          <input type="text" placeholder="Search courses..." style="border: none; outline: none; width: 100%; font-size: 0.95rem; color: #1e293b;">
+        </div>
+        <button onclick="showToast('Searching tech courses...', 'info')" class="btn btn-primary btn-md" style="border-radius: var(--radius-sm); padding: 0.6rem 1.6rem;">
+          Search
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Body Grid: Popular Courses (Left 65%) + Learning Paths (Right 35%) -->
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 4rem;">
+    <div class="tech-main-grid">
+      
+      <!-- Left: Popular Courses -->
+      <div>
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem;">Popular Courses</h2>
+
+        <div class="tech-courses-grid">
+          
+          <!-- Course 1: Web Development -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #eff6ff; color: #0066ff; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 0.75rem;">
+                💻
+              </div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Web Development</h3>
+              <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5;">Build modern websites with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 8px;">Beginner • 8 hours</div>
+              <button onclick="showToast('Starting Web Development course...', 'success')" class="btn btn-primary btn-sm" style="width: 100%; border-radius: var(--radius-sm);">Start Learning</button>
+            </div>
+          </div>
+
+          <!-- Course 2: Python Programming -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #f0fdf4; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 0.75rem;">
+                🐍
+              </div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Python Programming</h3>
+              <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5;">Learn Python from basics to advanced.</p>
+            </div>
+            <div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 8px;">Beginner • 12 hours</div>
+              <button onclick="showToast('Starting Python course...', 'success')" class="btn btn-primary btn-sm" style="width: 100%; border-radius: var(--radius-sm);">Start Learning</button>
+            </div>
+          </div>
+
+          <!-- Course 3: Data Science -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 0.75rem;">
+                📊
+              </div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Data Science</h3>
+              <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5;">Analyze data and build intelligent solutions.</p>
+            </div>
+            <div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 8px;">Intermediate • 20 hours</div>
+              <button onclick="showToast('Starting Data Science course...', 'success')" class="btn btn-primary btn-sm" style="width: 100%; border-radius: var(--radius-sm);">Start Learning</button>
+            </div>
+          </div>
+
+          <!-- Course 4: UI/UX Design -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #fef3c7; color: #d97706; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 0.75rem;">
+                🎨
+              </div>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">UI/UX Design</h3>
+              <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5;">Design better user experiences.</p>
+            </div>
+            <div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 8px;">Beginner • 10 hours</div>
+              <button onclick="showToast('Starting UI/UX course...', 'success')" class="btn btn-primary btn-sm" style="width: 100%; border-radius: var(--radius-sm);">Start Learning</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Learning Paths -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">Learning Paths</h2>
+          <a href="#" style="font-size: 0.78rem; font-weight: 700; color: #0066ff;">View All Courses →</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-radius: var(--radius-md); background: #f8fafc; cursor: pointer;" onclick="showToast('Web Development Path selected', 'info')">
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: #eff6ff; color: #0066ff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🌐</div>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 700; color: #0f172a;">Web Development Path</div>
+                <div style="font-size: 0.74rem; color: #64748b;">Frontend + Backend + Projects</div>
+              </div>
+            </div>
+            <span style="color: #64748b; font-weight: 700;">›</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-radius: var(--radius-md); background: #f8fafc; cursor: pointer;" onclick="showToast('Data Science Path selected', 'info')">
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: #f0fdf4; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📊</div>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 700; color: #0f172a;">Data Science Path</div>
+                <div style="font-size: 0.74rem; color: #64748b;">Python + ML + Projects</div>
+              </div>
+            </div>
+            <span style="color: #64748b; font-weight: 700;">›</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-radius: var(--radius-md); background: #f8fafc; cursor: pointer;" onclick="showToast('Mobile App Path selected', 'info')">
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: #fef2f2; color: #ef4444; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📱</div>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 700; color: #0f172a;">Mobile App Development</div>
+                <div style="font-size: 0.74rem; color: #64748b;">Android + iOS + Flutter</div>
+              </div>
+            </div>
+            <span style="color: #64748b; font-weight: 700;">›</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-radius: var(--radius-md); background: #f8fafc; cursor: pointer;" onclick="showToast('Cybersecurity Path selected', 'info')">
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: #f3e8ff; color: #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛡️</div>
+              <div>
+                <div style="font-size: 0.88rem; font-weight: 700; color: #0f172a;">Cybersecurity Path</div>
+                <div style="font-size: 0.74rem; color: #64748b;">Security + Ethical Hacking</div>
+              </div>
+            </div>
+            <span style="color: #64748b; font-weight: 700;">›</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Banner: Learn Today. Build Tomorrow matching Screenshot 4 -->
+    <div class="company-callout-banner" style="background: #0052cc; color: #ffffff;">
+      <div style="display: flex; gap: 1.25rem; align-items: center;">
+        <div style="font-size: 2.2rem;">🎓</div>
+        <div>
+          <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 4px;">Learn Today. Build Tomorrow.</h3>
+          <p style="color: #dbeafe; font-size: 0.92rem;">Gain new skills, get certified, and boost your career.</p>
+        </div>
+      </div>
+
+      <button onclick="showToast('Opening all courses library...', 'info')" class="btn btn-outline" style="background: transparent; color: #ffffff; border-color: rgba(255, 255, 255, 0.4); border-radius: var(--radius-md);">
+        Explore All Courses
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Dark Footer -->
+  <footer class="footer-dark-strip">
+    <div class="container footer-dark-inner">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="28" height="18" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#ffffff" stroke-width="4"/>
+        </svg>
+        <span style="font-weight: 800; font-size: 1.1rem;">JOB NEPAL</span>
+      </div>
+      <div>Find Your Job. Build Your Future.</div>
+      <div class="footer-social-links">
+        <a href="#">ⓕ</a>
+        <a href="#">in</a>
+        <a href="#">𝕏</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

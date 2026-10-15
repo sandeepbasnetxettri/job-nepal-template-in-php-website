@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a Job — Find the Right Talent for Your Team | Job Nepal</title>
+  <meta name="description" content="Reach thousands of qualified candidates across Nepal. Post your vacancy in minutes and build a stronger team.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+  <style>
+    /* Post a Job Hero */
+    .pj-hero-section {
+      background: linear-gradient(135deg, #072554 0%, #1e40af 60%, #3b82f6 100%);
+      color: #ffffff;
+      padding: 3.5rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .pj-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .pj-hero-pill-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      padding: 0.35rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 0.85rem;
+    }
+    .pj-hero-title {
+      font-size: 2.85rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .pj-hero-subtitle {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #93c5fd;
+      margin-bottom: 0.85rem;
+    }
+    .pj-hero-desc {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      max-width: 520px;
+      margin-bottom: 1.75rem;
+    }
+    .pj-feature-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .pj-feat-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Hero Right Visual */
+    .pj-hero-visual {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* 7-Step Layout Grid */
+    .pj-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin: 3.5rem 0 2rem;
+    }
+    .pj-step-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pj-step-header {
+      border-bottom: 1.5px solid #eff6ff;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .pj-step-num-badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #0066ff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 6px;
+    }
+    .pj-step-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .pj-step-sub {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Skills Interactive Selector */
+    .pj-skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    .pj-skill-tag {
+      background: #eff6ff;
+      color: #0066ff;
+      border: 1px solid #bfdbfe;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pj-skill-tag span {
+      cursor: pointer;
+      color: #ef4444;
+      font-weight: 800;
+    }
+
+    /* Benefits Checklist Grid */
+    .pj-benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .pj-benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: #334155;
+      background: #f8fafc;
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+    }
+    .pj-benefit-item input {
+      accent-color: #0066ff;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Step 7 Success State Card */
+    .pj-success-card {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #092654 0%, #1e40af 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 102, 255, 0.2);
+    }
+
+    @media (max-width: 960px) {
+      .pj-hero-grid { grid-template-columns: 1fr; }
+      .pj-steps-grid { grid-template-columns: 1fr; }
+      .pj-success-card { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+          <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+        </div>
+      </a>
+
+      <!-- Center Nav Links -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+        <li><a href="companies.html" class="nav-link">Companies</a></li>
+        <li><a href="post-job.html" class="nav-link active">Post a Job</a></li>
+        <li><a href="resume-builder.html" class="nav-link">Resume Builder</a></li>
+        <li><a href="career.html" class="nav-link">Resources</a></li>
+      </ul>
+
+      <!-- Right Action & Country Dropdown -->
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" aria-label="Search" title="Search">🔍</button>
+        <button class="btn btn-ghost btn-sm" aria-label="Notifications" title="Notifications">🔔</button>
+        <div class="country-pill-dropdown">
+          <button id="countryDropdownBtn" class="country-pill" aria-label="Select Country" aria-expanded="false" onclick="toggleCountryDropdown(event)">
+            <span id="currentCountryFlag">🇳🇵</span> <span id="currentCountryName">Nepal</span> ▾
+          </button>
+          <div id="countryDropdownMenu" class="country-dropdown-menu">
+            <div class="country-dropdown-header">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-main);">Select Region / Country</span>
+            </div>
+            <div class="country-search-box">
+              <input type="text" id="countrySearchInput" placeholder="🔍 Search country..." oninput="filterCountries(this.value)">
+            </div>
+            <div class="country-list" id="countryList">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-primary btn-sm" style="border-radius: var(--radius-full); padding: 0.45rem 1.25rem;">
+          Login / Sign Up
+        </a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section matching Mockup 2 -->
+  <section class="pj-hero-section">
+    <div class="container pj-hero-grid">
+      <div>
+        <div class="pj-hero-pill-badge">Post a Job</div>
+        <h1 class="pj-hero-title">Post a Job</h1>
+        <h2 class="pj-hero-subtitle">Find the right talent for your team</h2>
+        <p class="pj-hero-desc">
+          Reach thousands of qualified candidates across Nepal. Post your job in minutes and build a stronger team.
+        </p>
+
+        <!-- 4 Feature Badges -->
+        <div class="pj-feature-pills-row">
+          <div class="pj-feat-pill">📝 Quick & Easy</div>
+          <div class="pj-feat-pill">🚀 Wide Reach</div>
+          <div class="pj-feat-pill">🛡️ Quality Candidates</div>
+          <div class="pj-feat-pill">💼 Manage Applications</div>
+        </div>
+
+        <button onclick="scrollToStep(1)" class="btn btn-primary btn-lg" style="background: #ffffff; color: #0066ff; font-weight: 800; border: none; border-radius: var(--radius-md); padding: 0.85rem 2rem;">
+          Post a Job Now →
+        </button>
+      </div>
+
+      <!-- Right Visual Mockup -->
+      <div class="pj-hero-visual">
+        <div style="font-size: 3rem; margin-bottom: 0.75rem;">🏢 🇳🇵</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; color: #ffffff;">Better Teams Build a Brighter Nepal</h3>
+        <p style="font-size: 0.9rem; color: #bfdbfe; line-height: 1.5; margin-bottom: 1.25rem;">
+          Connect directly with software engineers, designers, accountants, and marketing specialists ready to join your organization.
+        </p>
+        <div style="display: flex; gap: 8px; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #ffffff; background: rgba(0,0,0,0.2); padding: 8px 14px; border-radius: var(--radius-full);">
+          <span>✓ 85,000+ Active Seekers</span>
+          <span>•</span>
+          <span>✓ 100% Verified Profiles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7-Step Interactive Vacancy Post Builder matching Mockup 2 -->
+  <main class="container section-padding" style="padding-top: 3rem; padding-bottom: 3rem;">
+    
+    <form id="postJobMultiStepForm">
+      <div class="pj-steps-grid">
+
+        <!-- STEP 1: Company Information -->
+        <div class="pj-step-card" id="step1">
+          <div>
+            <div class="pj-step-header">
+              <span class="pj-step-num-badge">Step 1</span>
+              <h3 class="pj-step-title">1. Company Information</h3>
+              <div class="pj-step-sub">
+                Tell us about your company — show candidates why they should work with you. Add company details, logo and profile info.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company Name *</label>
+              <input type="text" id="pjCompanyName" class="form-control" placeholder="ABC Tech Pvt. Ltd." value="ABC Tech Pvt. Ltd." required oninput="updateLiveJobPreview()">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Industry *</label>
+              <select id="pjCompanyIndustry" class="form-control" onchange="updateLiveJobPreview()">
+                <option value="IT & Software">IT & Software</option>
+                <option value="Banking & Finance">Banking & Finance</option>
+                <option value="Telecommunications">Telecommunications</option>
+                <option value="Healthcare & Medical">Healthcare & Medical</option>
+                <option value="Education">Education</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Retail & E-commerce">Retail & E-commerce</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company Logo</label>
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <div style="width: 80px; height: 60px; border: 1.5px dashed #93c5fd; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #f0f7ff; font-weight: 800; font-size: 0.8rem; color: #0066ff;">
+                  ABC TECH
+                </div>
+                <div style="font-size: 0.82rem; color: #64748b;">
+                  <div>✓ Company profile active</div>
+                  <div>✓ Website & social links verified</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Job Details -->
+        <div class="pj-step-card" id="step2">
+          <div>
+            <div class="pj-step-header">
+              <span class="pj-step-num-badge">Step 2</span>
+              <h3 class="pj-step-title">2. Job Details</h3>
+              <div class="pj-step-sub">
+                Provide complete details about the job so candidates can understand the role and apply with confidence.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Job Title *</label>
+              <input type="text" id="pjJobTitle" class="form-control" placeholder="e.g. Senior Software Engineer" value="Senior Software Engineer" required oninput="updateLiveJobPreview()">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Job Description *</label>
+              <textarea id="pjJobDescription" class="form-control" rows="3" placeholder="Describe the role, responsibilities, and team culture..." oninput="updateLiveJobPreview()">We are hiring a dedicated engineer to lead backend services and high-scale APIs for our Kathmandu engineering division.</textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Job Type</label>
+                <select id="pjJobType" class="form-control" onchange="updateLiveJobPreview()">
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Internship">Internship</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Experience Level</label>
+                <select id="pjExpLevel" class="form-control" onchange="updateLiveJobPreview()">
+                  <option value="2-5 years">2-5 years</option>
+                  <option value="Entry Level (0-1 yr)">Entry Level (0-1 yr)</option>
+                  <option value="Mid Level (1-3 yrs)">Mid Level (1-3 yrs)</option>
+                  <option value="Senior Level (5+ yrs)">Senior Level (5+ yrs)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Requirements & Skills -->
+        <div class="pj-step-card" id="step3">
+          <div>
+            <div class="pj-step-header">
+              <span class="pj-step-num-badge">Step 3</span>
+              <h3 class="pj-step-title">3. Requirements & Skills</h3>
+              <div class="pj-step-sub">
+                Help us find the right candidates by specifying skills, experience, and education requirements.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Required Skills (Click to remove / Add new)</label>
+              <div class="pj-skills-container" id="pjSkillsPillContainer">
+                <div class="pj-skill-tag">JavaScript <span onclick="removeSkillTag(this, 'JavaScript')">×</span></div>
+                <div class="pj-skill-tag">React <span onclick="removeSkillTag(this, 'React')">×</span></div>
+                <div class="pj-skill-tag">Node.js <span onclick="removeSkillTag(this, 'Node.js')">×</span></div>
+                <div class="pj-skill-tag">Python <span onclick="removeSkillTag(this, 'Python')">×</span></div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <input type="text" id="pjNewSkillInput" class="form-control" placeholder="+ Add a new skill..." style="font-size: 0.85rem;">
+                <button type="button" onclick="addNewSkill()" class="btn btn-outline btn-sm">Add</button>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Education Level</label>
+                <select id="pjEducation" class="form-control" onchange="updateLiveJobPreview()">
+                  <option value="Bachelor's Degree">Bachelor's Degree</option>
+                  <option value="Master's Degree">Master's Degree</option>
+                  <option value="+2 / High School">+2 / High School</option>
+                  <option value="Diploma / Certification">Diploma / Certification</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Location (Nepal)</label>
+                <select id="pjLocationSelect" class="form-control" onchange="updateLiveJobPreview()">
+                  <option value="Kathmandu, Nepal">Kathmandu, Nepal</option>
+                  <option value="Lalitpur, Nepal">Lalitpur, Nepal</option>
+                  <option value="Pokhara, Nepal">Pokhara, Nepal</option>
+                  <option value="Chitwan, Nepal">Chitwan, Nepal</option>
+                  <option value="Remote, Nepal">Remote, Nepal</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Salary & Benefits -->
+        <div class="pj-step-card" id="step4">
+          <div>
+            <div class="pj-step-header">
+              <span class="pj-step-num-badge">Step 4</span>
+              <h3 class="pj-step-title">4. Salary & Benefits</h3>
+              <div class="pj-step-sub">
+                Competitive salary and benefits help you get more qualified applications.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Monthly Salary Range (NPR)</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 90px; gap: 8px;">
+                <input type="number" id="pjSalaryMinInput" class="form-control" placeholder="Min" value="80000" oninput="updateLiveJobPreview()">
+                <input type="number" id="pjSalaryMaxInput" class="form-control" placeholder="Max" value="120000" oninput="updateLiveJobPreview()">
+                <select class="form-control" disabled style="background: #f1f5f9;">
+                  <option>NPR</option>
+                </select>
+              </div>
+            </div>
+
+            <label class="form-label">Benefits (Select all that apply)</label>
+            <div class="pj-benefits-grid">
+              <label class="pj-benefit-item"><input type="checkbox" checked> Health Insurance</label>
+              <label class="pj-benefit-item"><input type="checkbox" checked> Dashain Bonus</label>
+              <label class="pj-benefit-item"><input type="checkbox" checked> Flexible Working Hours</label>
+              <label class="pj-benefit-item"><input type="checkbox"> Transportation Allowance</label>
+              <label class="pj-benefit-item"><input type="checkbox" checked> Professional Growth</label>
+              <label class="pj-benefit-item"><input type="checkbox" checked> Remote Work Option</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5: Application Deadline -->
+        <div class="pj-step-card" id="step5">
+          <div>
+            <div class="pj-step-header">
+              <span class="pj-step-num-badge">Step 5</span>
+              <h3 class="pj-step-title">5. Application Deadline</h3>
+              <div class="pj-step-sub">
+                Choose how long you want to accept applications for this job opening.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Application Deadline *</label>
+              <input type="date" id="pjDeadlineInput" class="form-control" value="2026-12-31" onchange="updateLiveJobPreview()">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Job Posting Duration</label>
+              <select class="form-control">
+                <option>30 days</option>
+                <option>45 days</option>
+                <option>60 days</option>
+              </select>
+            </div>
+
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: #475569; cursor: pointer;">
+              <input type="checkbox" checked style="accent-color: #0066ff;"> Keep it open until filled
+            </label>
+          </div>
+        </div>
+
+        <!-- STEP 6: Preview Before Publishing -->
+        <div class="pj-step-card" id="step6" style="background: #f8fafc; border: 2px solid #0066ff;">
+          <div>
+            <div class="pj-step-header">
+              <span class="pj-step-num-badge" style="background: #0066ff; color: #ffffff;">Step 6</span>
+              <h3 class="pj-step-title">6. Preview Before Publishing</h3>
+              <div class="pj-step-sub">
+                Review all details before publishing your vacancy to Job Nepal.
+              </div>
+            </div>
+
+            <!-- Real-time Preview Container -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <div>
+                  <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;" id="prevJobTitle">Senior Software Engineer</h4>
+                  <div style="font-size: 0.88rem; font-weight: 700; color: #0066ff;" id="prevCompany">ABC Tech Pvt. Ltd.</div>
+                </div>
+                <span class="badge badge-nepal">Verified Employer</span>
+              </div>
+
+              <div style="font-size: 0.85rem; color: #64748b; display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 0.85rem;">
+                <span id="prevLocation">📍 Kathmandu, Nepal</span>
+                <span id="prevSalary" style="color: #059669; font-weight: 700;">💰 NPR 80,000 – 120,000</span>
+                <span id="prevMeta">💼 Full-time • 2-5 years</span>
+              </div>
+
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="prevSkillsContainer">
+                <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">JavaScript</span>
+                <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">React</span>
+                <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Node.js</span>
+                <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Python</span>
+              </div>
+            </div>
+
+            <button type="button" onclick="publishVacancyNow()" class="btn btn-primary btn-lg" style="width: 100%; border-radius: var(--radius-md); font-weight: 800; font-size: 1.05rem;">
+              Publish Job 🚀
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 7: Success / Published State -->
+        <div class="pj-success-card" id="step7Success" style="display: none;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: #10b981; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1.25rem;">
+            ✓
+          </div>
+          <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;">Job Posted Successfully!</h2>
+          <p style="color: #bfdbfe; font-size: 1.05rem; max-width: 500px; margin: 0 auto 2rem;">
+            Your vacancy has been verified and published to thousands of candidates across Nepal.
+          </p>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="jobs.html" id="successViewJobBtn" class="btn btn-primary" style="background: #ffffff; color: #0066ff; font-weight: 800; padding: 0.75rem 2rem; border-radius: var(--radius-full);">
+              View Job
+            </a>
+            <button type="button" onclick="location.reload()" class="btn btn-outline" style="color: #ffffff; border-color: #ffffff; padding: 0.75rem 2rem; border-radius: var(--radius-full);">
+              Post Another Job
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 JOB NEPAL — Find Your Job. Build Your Future.</div>
+      <div>
+        <a href="jobs.html" style="color: #94a3b8; margin-right: 1.2rem;">Find Jobs</a>
+        <a href="companies.html" style="color: #94a3b8;">Companies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let activeSkills = ['JavaScript', 'React', 'Node.js', 'Python'];
+
+    function scrollToStep(stepNumber) {
+      const el = document.getElementById('step' + stepNumber);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function removeSkillTag(btn, skillName) {
+      activeSkills = activeSkills.filter(s => s !== skillName);
+      renderSkillTags();
+      updateLiveJobPreview();
+    }
+
+    function addNewSkill() {
+      const input = document.getElementById('pjNewSkillInput');
+      const val = input.value.trim();
+      if (val && !activeSkills.includes(val)) {
+        activeSkills.push(val);
+        input.value = '';
+        renderSkillTags();
+        updateLiveJobPreview();
+      }
+    }
+
+    function renderSkillTags() {
+      const container = document.getElementById('pjSkillsPillContainer');
+      if (!container) return;
+      container.innerHTML = activeSkills.map(s => `
+        <div class="pj-skill-tag">${s} <span onclick="removeSkillTag(this, '${s}')">×</span></div>
+      `).join('');
+    }
+
+    function updateLiveJobPreview() {
+      const title = document.getElementById('pjJobTitle').value || 'Senior Software Engineer';
+      const company = document.getElementById('pjCompanyName').value || 'ABC Tech Pvt. Ltd.';
+      const location = document.getElementById('pjLocationSelect').value || 'Kathmandu, Nepal';
+      const minSalary = parseInt(document.getElementById('pjSalaryMinInput').value) || 80000;
+      const maxSalary = parseInt(document.getElementById('pjSalaryMaxInput').value) || 120000;
+      const jobType = document.getElementById('pjJobType').value;
+      const expLevel = document.getElementById('pjExpLevel').value;
+
+      document.getElementById('prevJobTitle').textContent = title;
+      document.getElementById('prevCompany').textContent = company;
+      document.getElementById('prevLocation').textContent = '📍 ' + location;
+      document.getElementById('prevSalary').textContent = `💰 NPR ${minSalary.toLocaleString()} – ${maxSalary.toLocaleString()}`;
+      document.getElementById('prevMeta').textContent = `💼 ${jobType} • ${expLevel}`;
+
+      const skillsContainer = document.getElementById('prevSkillsContainer');
+      if (skillsContainer) {
+        skillsContainer.innerHTML = activeSkills.map(s => `
+          <span style="background: #eff6ff; color: #1d4ed8; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 600;">${s}</span>
+        `).join('');
+      }
+    }
+
+    function publishVacancyNow() {
+      const title = document.getElementById('pjJobTitle').value.trim();
+      const company = document.getElementById('pjCompanyName').value.trim();
+      const category = document.getElementById('pjCompanyIndustry').value;
+      const location = document.getElementById('pjLocationSelect').value;
+      const jobType = document.getElementById('pjJobType').value;
+      const minSalary = parseInt(document.getElementById('pjSalaryMinInput').value) || 80000;
+      const maxSalary = parseInt(document.getElementById('pjSalaryMaxInput').value) || 120000;
+      const deadline = document.getElementById('pjDeadlineInput').value;
+      const expLevel = document.getElementById('pjExpLevel').value;
+      const description = document.getElementById('pjJobDescription').value;
+
+      const newJob = {
+        id: 'job-' + Date.now(),
+        title,
+        companyId: 'company-' + Date.now(),
+        company,
+        location,
+        workplaceType: 'Hybrid',
+        jobType,
+        category,
+        techCategory: activeSkills[0] || 'Software Engineering',
+        experience: expLevel,
+        education: "Bachelor's Degree",
+        salaryMin: minSalary,
+        salaryMax: maxSalary,
+        salaryFormatted: `NPR ${minSalary.toLocaleString()} – ${maxSalary.toLocaleString()} / month`,
+        postedDate: new Date().toISOString().split('T')[0],
+        deadline,
+        isFeatured: true,
+        skills: activeSkills,
+        description,
+        responsibilities: [
+          'Develop robust backend APIs and modern web architectures',
+          'Collaborate with agile cross-functional engineering squads',
+          'Optimize database schemas and ensure high availability'
+        ],
+        requirements: [
+          'Strong practical experience in required technologies',
+          'Proven record delivering quality software applications'
+        ],
+        benefits: ['Health Insurance', 'Dashain Festival Bonus', 'Flexible Working Hours']
+      };
+
+      if (window.JobNepalDB) {
+        window.JobNepalDB.saveJob(newJob);
+      }
+
+      showToast('Job vacancy successfully published!', 'success');
+
+      // Reveal Step 7 Success State Card
+      const successCard = document.getElementById('step7Success');
+      if (successCard) {
+        successCard.style.display = 'block';
+        successCard.scrollIntoView({ behavior: 'smooth' });
+        const viewBtn = document.getElementById('successViewJobBtn');
+        if (viewBtn) viewBtn.href = `job-details.html?id=${newJob.id}`;
+      }
+    }
+  </script>
+</body>
+</html>

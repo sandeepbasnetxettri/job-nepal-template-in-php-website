@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Companies — Build Your Career with Leading Companies | Job Nepal</title>
+  <meta name="description" content="Explore trusted companies in Nepal, discover great workplaces, and find open vacancies.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+        </div>
+      </a>
+
+      <!-- Center Nav Links -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+        <li><a href="companies.html" class="nav-link active">Companies</a></li>
+        <li><a href="career.html" class="nav-link">Career</a></li>
+        <li><a href="tech-learning.html" class="nav-link">Tech Learning</a></li>
+        <li><a href="resume-builder.html" class="nav-link">Resume Builder</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-primary btn-sm" style="border-radius: var(--radius-full); padding: 0.45rem 1.25rem;">
+          Login / Sign Up
+        </a>
+        <div class="country-pill-dropdown">
+          <button id="countryDropdownBtn" class="country-pill" aria-label="Select Country" aria-expanded="false" onclick="toggleCountryDropdown(event)">
+            <span id="currentCountryFlag">🇳🇵</span> <span id="currentCountryName">Nepal</span> ▾
+          </button>
+          <div id="countryDropdownMenu" class="country-dropdown-menu">
+            <div class="country-dropdown-header">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--text-main);">Select Region / Country</span>
+            </div>
+            <div class="country-search-box">
+              <input type="text" id="countrySearchInput" placeholder="🔍 Search country..." oninput="filterCountries(this.value)">
+            </div>
+            <div class="country-list" id="countryList">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Blue Panoramic Header with Professionals Image matching Screenshot 2 -->
+  <section style="background: linear-gradient(135deg, #0f2b5c 0%, #1e4b8a 100%); color: #ffffff; padding: 4.5rem 0 3.5rem;">
+    <div class="container" style="max-width: 960px;">
+      <h1 style="font-size: 2.4rem; font-weight: 800; margin-bottom: 0.5rem;">Top Companies</h1>
+      <h2 style="font-size: 1.35rem; font-weight: 600; color: #93c5fd; margin-bottom: 0.85rem;">Build Your Career with Leading Companies</h2>
+      <p style="color: #cbd5e1; font-size: 1rem; max-width: 640px; margin-bottom: 2rem;">
+        Explore trusted companies, discover great workplaces, and find your next opportunity.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="company-search-grid">
+        <div style="display: flex; align-items: center; gap: 8px; padding-left: 10px;">
+          <span style="color: #94a3b8;">🔍</span>
+          <input type="text" id="companySearchInput" placeholder="Search companies..." style="border: none; outline: none; width: 100%; font-size: 0.95rem; color: #1e293b;">
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; border-left: 1px solid var(--border-color); padding-left: 10px;">
+          <span style="color: #94a3b8;">📍</span>
+          <select id="companyLocFilter" style="border: none; outline: none; width: 100%; font-size: 0.95rem; color: #1e293b; background: transparent;">
+            <option value="all">All Locations</option>
+            <option value="Kathmandu">Kathmandu</option>
+            <option value="Lalitpur">Lalitpur</option>
+            <option value="Pokhara">Pokhara</option>
+          </select>
+        </div>
+
+        <button onclick="filterCompanies()" class="btn btn-primary btn-md" style="border-radius: var(--radius-sm); padding: 0.65rem 1.85rem;">
+          Search
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Companies 4-Card Grid matching Screenshot 2 -->
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 4rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">Featured Companies</h2>
+      <a href="companies.html" style="font-size: 0.82rem; font-weight: 700; color: #0066ff;">View All Companies →</a>
+    </div>
+
+    <div class="companies-grid">
+      
+      <!-- Company 1: WorldLink -->
+      <div class="company-card" style="padding: 1.75rem 1.25rem; text-align: left; align-items: flex-start;">
+        <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: #eff6ff; color: #0066ff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 0.5rem;">
+          🌐
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">WorldLink</h3>
+        <div style="font-size: 0.82rem; color: #64748b;">Telecom</div>
+        <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">📍 Kathmandu</div>
+        <div style="font-size: 0.85rem; font-weight: 700; color: #0066ff; margin-top: 1rem;">120+ open jobs</div>
+      </div>
+
+      <!-- Company 2: Ncell -->
+      <div class="company-card" style="padding: 1.75rem 1.25rem; text-align: left; align-items: flex-start;">
+        <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: #f3e8ff; color: #8b5cf6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">
+          Ncell
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Ncell</h3>
+        <div style="font-size: 0.82rem; color: #64748b;">Telecom</div>
+        <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">📍 Kathmandu</div>
+        <div style="font-size: 0.85rem; font-weight: 700; color: #0066ff; margin-top: 1rem;">85+ open jobs</div>
+      </div>
+
+      <!-- Company 3: Himalayan Bank -->
+      <div class="company-card" style="padding: 1.75rem 1.25rem; text-align: left; align-items: flex-start;">
+        <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: #fef2f2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 0.5rem;">
+          🏛️
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Himalayan Bank</h3>
+        <div style="font-size: 0.82rem; color: #64748b;">Banking & Finance</div>
+        <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">📍 Kathmandu</div>
+        <div style="font-size: 0.85rem; font-weight: 700; color: #0066ff; margin-top: 1rem;">50+ open jobs</div>
+      </div>
+
+      <!-- Company 4: Sunrise Bank -->
+      <div class="company-card" style="padding: 1.75rem 1.25rem; text-align: left; align-items: flex-start;">
+        <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: #fff7ed; color: #ea580c; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 0.5rem;">
+          🌅
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 2px;">Sunrise Bank</h3>
+        <div style="font-size: 0.82rem; color: #64748b;">Banking & Finance</div>
+        <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">📍 Pokhara</div>
+        <div style="font-size: 0.85rem; font-weight: 700; color: #0066ff; margin-top: 1rem;">45+ open jobs</div>
+      </div>
+
+    </div>
+
+    <!-- Explore by Industry matching Screenshot 2 -->
+    <div style="margin-bottom: 1.25rem;">
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a;">Explore by Industry</h2>
+    </div>
+
+    <div class="company-industry-grid">
+      <a href="companies.html" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #eff6ff; color: #0066ff;">💻</div>
+        <div class="cat-title-text">IT & Software</div>
+      </a>
+      <a href="companies.html" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #f0fdf4; color: #16a34a;">🏛️</div>
+        <div class="cat-title-text">Banking & Finance</div>
+      </a>
+      <a href="companies.html" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #fff1f2; color: #e11d48;">❤️</div>
+        <div class="cat-title-text">Healthcare</div>
+      </a>
+      <a href="companies.html" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #f0fdfa; color: #0d9488;">🎓</div>
+        <div class="cat-title-text">Education</div>
+      </a>
+      <a href="companies.html" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #f8fafc; color: #475569;">🏭</div>
+        <div class="cat-title-text">Manufacturing</div>
+      </a>
+      <a href="companies.html" class="cat-pill-card">
+        <div class="cat-icon-avatar" style="background: #fffbeb; color: #d97706;">🛍️</div>
+        <div class="cat-title-text">Retail</div>
+      </a>
+    </div>
+
+    <!-- "Are you a company?" Callout Banner matching Screenshot 2 -->
+    <div class="company-callout-banner">
+      <div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Are you a company?</h3>
+        <p style="color: #64748b; font-size: 0.95rem;">Find the best talent for your team. Post your jobs today!</p>
+      </div>
+
+      <a href="post-job.html" class="btn btn-primary btn-lg" style="border-radius: var(--radius-md);">
+        Post a Job
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Dark Footer -->
+  <footer class="footer-dark-strip">
+    <div class="container footer-dark-inner">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="28" height="18" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#ffffff" stroke-width="4"/>
+        </svg>
+        <span style="font-weight: 800; font-size: 1.1rem;">JOB NEPAL</span>
+      </div>
+      <div>Find Your Job. Build Your Future.</div>
+      <div class="footer-social-links">
+        <a href="#">ⓕ</a>
+        <a href="#">in</a>
+        <a href="#">𝕏</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function filterCompanies() {
+      const q = document.getElementById('companySearchInput').value.trim();
+      showToast(q ? `Searching companies for "${q}"` : 'Showing all companies', 'info');
+    }
+  </script>
+</body>
+</html>

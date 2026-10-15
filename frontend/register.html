@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Create Your Job Nepal Account</title>
+  <meta name="description" content="Register as a Job Seeker or Company on Job Nepal. Find top jobs, build your resume, post vacancies, and connect with talent across Nepal.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body style="background-color: #f8fafc;">
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+          <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+        <li><a href="companies.html" class="nav-link">Companies</a></li>
+        <li><a href="career.html" class="nav-link">Career</a></li>
+        <li><a href="post-job.html" class="nav-link">Post a Job</a></li>
+        <li><a href="login.html" class="nav-link">Login</a></li>
+        <li><a href="register.html" class="nav-link active">Register</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Mode Switcher Pill in Header -->
+        <div id="headerModeToggle" style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 3px; display: none; gap: 4px;">
+          <button id="toggleSeekerBtn" onclick="switchRegistrationFlow('seeker')" class="btn btn-sm btn-primary" style="border-radius: var(--radius-sm); font-size: 0.8rem; padding: 0.25rem 0.65rem;">
+            👤 Job Seeker
+          </button>
+          <button id="toggleCompanyBtn" onclick="switchRegistrationFlow('company')" class="btn btn-sm btn-outline" style="border-radius: var(--radius-sm); font-size: 0.8rem; padding: 0.25rem 0.65rem; border: none; background: transparent;">
+            🏢 Company
+          </button>
+        </div>
+
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       SECTION 1: REGISTER LANDING PAGE (Choose Account Type)
+       ========================================================================= -->
+  <section id="registerLandingView" class="container section-padding" style="max-width: 960px; margin: 1.5rem auto 3rem;">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <span class="badge badge-nepal" style="margin-bottom: 0.75rem; display: inline-flex; align-items: center; gap: 6px;">
+        <span>🇳🇵</span> Join Nepal's #1 Employment Platform
+      </span>
+      <h1 style="font-size: 2.4rem; font-weight: 800; color: var(--text-main); margin-top: 4px;">
+        Create Your Job Nepal Account
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 6px; max-width: 580px; margin-left: auto; margin-right: auto;">
+        Choose your account type to get started.
+      </p>
+    </div>
+
+    <!-- Two Large Account Cards -->
+    <div class="auth-account-type-grid">
+      
+      <!-- Card 1: Job Seeker -->
+      <div class="account-choice-card" onclick="startRegistrationFlow('seeker')">
+        <div>
+          <div class="account-choice-icon">👤</div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.6rem;">Job Seeker</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">
+            Find jobs, create your resume and build your career in Nepal.
+          </p>
+          <ul style="list-style: none; text-align: left; font-size: 0.88rem; color: #475569; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="display: flex; align-items: center; gap: 8px;">✓ Apply for verified jobs across Nepal</li>
+            <li style="display: flex; align-items: center; gap: 8px;">✓ Free AI-powered Resume Builder</li>
+            <li style="display: flex; align-items: center; gap: 8px;">✓ Real-time SMS & Email job alerts</li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span>Register as Job Seeker</span> <span>→</span>
+        </button>
+      </div>
+
+      <!-- Card 2: Company / Employer -->
+      <div class="account-choice-card" onclick="startRegistrationFlow('company')">
+        <div>
+          <div class="account-choice-icon" style="background: #fff1f2; border-color: #fecdd3;">🏢</div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.6rem;">Company / Employer</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">
+            Post jobs, find great talent and grow your team with Job Nepal.
+          </p>
+          <ul style="list-style: none; text-align: left; font-size: 0.88rem; color: #475569; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="display: flex; align-items: center; gap: 8px;">✓ Post vacancies & reach 100k+ candidates</li>
+            <li style="display: flex; align-items: center; gap: 8px;">✓ Applicant tracking & candidate shortlisting</li>
+            <li style="display: flex; align-items: center; gap: 8px;">✓ Verified employer badge & analytics</li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-crimson btn-lg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <span>Register as Company</span> <span>→</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Already have an account text -->
+    <div style="text-align: center; margin-top: 2.5rem; color: var(--text-muted); font-size: 0.95rem;">
+      Already have an account? <a href="login.html" style="font-weight: 700; color: var(--primary);">Login here</a>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: JOB SEEKER MULTI-STEP REGISTRATION FLOW
+       ========================================================================= -->
+  <div id="seekerRegistrationView" class="reg-split-container" style="display: none;">
+    
+    <!-- Left Dark Blue Stepper Sidebar -->
+    <aside class="reg-sidebar">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+            👤
+          </div>
+          <div>
+            <div style="font-weight: 800; font-size: 1.15rem; color: #fff;">Job Seeker</div>
+            <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.75);">Create your account</div>
+          </div>
+        </div>
+
+        <!-- 5-Step Vertical Stepper Indicator -->
+        <ul class="reg-stepper-list" id="seekerStepperList">
+          <li class="reg-step-item active" data-step="1">
+            <div class="reg-step-number">1</div>
+            <div>Personal Information</div>
+          </li>
+          <li class="reg-step-item" data-step="2">
+            <div class="reg-step-number">2</div>
+            <div>Education</div>
+          </li>
+          <li class="reg-step-item" data-step="3">
+            <div class="reg-step-number">3</div>
+            <div>Skills & Experience</div>
+          </li>
+          <li class="reg-step-item" data-step="4">
+            <div class="reg-step-number">4</div>
+            <div>Resume & Profile</div>
+          </li>
+          <li class="reg-step-item" data-step="5">
+            <div class="reg-step-number">5</div>
+            <div>Verify Account</div>
+          </li>
+        </ul>
+
+        <button type="button" onclick="cancelRegistration()" class="btn btn-outline" style="width: 100%; margin-top: 2rem; background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25); color: #fff;">
+          ← Choose Different Account
+        </button>
+      </div>
+
+      <!-- Bottom Nepal Graphic & Slogan -->
+      <div style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+        <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1rem; margin-bottom: 4px;">
+          <span>🇳🇵</span> Nepal
+        </div>
+        <div style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.75);">
+          More Jobs. A Brighter Future.
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="reg-main-content">
+      
+      <!-- Scenic Mountain Panoramic Header Banner -->
+      <div class="reg-scenic-banner">
+        <h1 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 4px;">Join as a Job Seeker</h1>
+        <p style="font-size: 0.95rem; opacity: 0.95;">
+          Create your account and start your journey towards a better career in Nepal.
+        </p>
+      </div>
+
+      <!-- Form Card Multi-step Container -->
+      <div class="reg-form-card">
+        
+        <!-- STEP 1: Personal Information -->
+        <div id="seekerStep1" class="seeker-step-pane">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Personal Information</h2>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Tell us about yourself</p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrFullName">Full Name <span style="color: var(--nepal-red);">*</span></label>
+              <input type="text" id="skrFullName" class="form-control" placeholder="Enter your full name" required>
+              <div class="field-error-msg" id="skrFullNameError">Please enter your full name.</div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrEmail">Email Address <span style="color: var(--nepal-red);">*</span></label>
+              <input type="email" id="skrEmail" class="form-control" placeholder="example@gmail.com" required>
+              <div class="field-error-msg" id="skrEmailError">Please enter a valid email address.</div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrMobile">Mobile Number <span style="color: var(--nepal-red);">*</span></label>
+              <input type="tel" id="skrMobile" class="form-control" placeholder="98XXXXXXXX" maxlength="10" required>
+              <div class="field-error-msg" id="skrMobileError">Mobile number is required (10 digits).</div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrLocation">Location <span style="color: var(--nepal-red);">*</span></label>
+              <select id="skrLocation" class="form-control" required>
+                <option value="" disabled selected>Select your location</option>
+                <option value="Dumkibas, Nepal">Dumkibas, Nepal</option>
+                <option value="Kathmandu">Kathmandu</option>
+                <option value="Lalitpur">Lalitpur</option>
+                <option value="Bhaktapur">Bhaktapur</option>
+                <option value="Pokhara">Pokhara</option>
+                <option value="Chitwan">Chitwan</option>
+                <option value="Butwal">Butwal</option>
+                <option value="Biratnagar">Biratnagar</option>
+                <option value="Birgunj">Birgunj</option>
+                <option value="Dharan">Dharan</option>
+                <option value="Hetauda">Hetauda</option>
+                <option value="Nepalgunj">Nepalgunj</option>
+                <option value="Dhangadhi">Dhangadhi</option>
+                <option value="Janakpur">Janakpur</option>
+                <option value="Other Nepal Location">Other Nepal Location</option>
+                <option value="Remote — Nepal">Remote — Nepal</option>
+              </select>
+              <div class="field-error-msg" id="skrLocationError">Please select your location.</div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrPassword">Password <span style="color: var(--nepal-red);">*</span></label>
+              <div class="password-input-wrap">
+                <input type="password" id="skrPassword" class="form-control" placeholder="Create a strong password" oninput="updatePasswordStrength(this.value, 'skrPwdMeter', 'skrPwdReqs')" required>
+                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('skrPassword', this)">👁️</button>
+              </div>
+              <div class="field-error-msg" id="skrPasswordError">Password must contain at least 8 characters.</div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrConfirmPassword">Confirm Password <span style="color: var(--nepal-red);">*</span></label>
+              <div class="password-input-wrap">
+                <input type="password" id="skrConfirmPassword" class="form-control" placeholder="Confirm your password" required>
+                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('skrConfirmPassword', this)">👁️</button>
+              </div>
+              <div class="field-error-msg" id="skrConfirmPasswordError">Passwords do not match.</div>
+            </div>
+          </div>
+
+          <!-- Password Strength Display -->
+          <div class="pwd-strength-container" id="skrPwdMeter" style="display: none;">
+            <div class="pwd-strength-bar">
+              <div class="pwd-strength-segment" id="skrPwdSeg1"></div>
+              <div class="pwd-strength-segment" id="skrPwdSeg2"></div>
+              <div class="pwd-strength-segment" id="skrPwdSeg3"></div>
+              <div class="pwd-strength-segment" id="skrPwdSeg4"></div>
+            </div>
+            <div class="pwd-strength-label">
+              <span>Strength: <span id="skrPwdText" style="color: var(--nepal-red);">Too Weak</span></span>
+            </div>
+            <ul class="pwd-req-list" id="skrPwdReqs">
+              <li class="pwd-req-item invalid" data-req="len">Minimum 8 characters</li>
+              <li class="pwd-req-item invalid" data-req="upper">Uppercase letter</li>
+              <li class="pwd-req-item invalid" data-req="lower">Lowercase letter</li>
+              <li class="pwd-req-item invalid" data-req="num">Number</li>
+              <li class="pwd-req-item invalid" data-req="spec">Special character</li>
+            </ul>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+            <button type="button" onclick="nextSeekerStep(1)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+              Next Step →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Education -->
+        <div id="seekerStep2" class="seeker-step-pane" style="display: none;">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Education</h2>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Tell us about your educational background</p>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label" for="skrEducation">Highest Qualification <span style="color: var(--nepal-red);">*</span></label>
+            <select id="skrEducation" class="form-control" required>
+              <option value="" disabled selected>Select highest qualification</option>
+              <option value="Bachelor in Computer Engineering / CSIT">Bachelor in Computer Engineering / CSIT</option>
+              <option value="BCA / BIT">BCA / BIT</option>
+              <option value="BBA / Management">BBA / Management</option>
+              <option value="Bachelor's Degree">Bachelor's Degree</option>
+              <option value="Master's Degree">Master's Degree</option>
+              <option value="MCS / MIT">MCS / MIT</option>
+              <option value="MBA">MBA</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Diploma">Diploma</option>
+              <option value="High School (+2)">High School (+2)</option>
+              <option value="SEE">SEE</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="field-error-msg" id="skrEducationError">Please select your highest qualification.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrInstitution">College / University Name</label>
+              <input type="text" id="skrInstitution" class="form-control" placeholder="e.g. Tribhuvan University, Kathmandu University">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrGradYear">Graduation Year</label>
+              <input type="number" id="skrGradYear" class="form-control" placeholder="e.g. 2024" min="1990" max="2032">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 1.75rem;">
+            <button type="button" onclick="prevSeekerStep(2)" class="btn btn-outline">
+              ← Back
+            </button>
+            <button type="button" onclick="nextSeekerStep(2)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+              Next Step →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Skills & Experience -->
+        <div id="seekerStep3" class="seeker-step-pane" style="display: none;">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Skills</h2>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Select your skills (Allow multiple selections)</p>
+
+          <!-- Selected Skills Tags Container -->
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Selected Skills <span style="color: var(--nepal-red);">*</span></label>
+            <div class="tags-input-container" id="seekerSelectedSkillsContainer">
+              <span class="skill-chip">JavaScript <span class="skill-chip-remove" onclick="removeSkillChip(this, 'JavaScript')">✕</span></span>
+              <span class="skill-chip">Python <span class="skill-chip-remove" onclick="removeSkillChip(this, 'Python')">✕</span></span>
+              <span class="skill-chip">React <span class="skill-chip-remove" onclick="removeSkillChip(this, 'React')">✕</span></span>
+              <span class="skill-chip">HTML <span class="skill-chip-remove" onclick="removeSkillChip(this, 'HTML')">✕</span></span>
+              <span class="skill-chip">CSS <span class="skill-chip-remove" onclick="removeSkillChip(this, 'CSS')">✕</span></span>
+              <input type="text" id="seekerCustomSkillInput" placeholder="Type new skill & press Enter..." style="border: none; outline: none; font-size: 0.85rem; padding: 4px; flex: 1; min-width: 140px;" onkeydown="handleSkillInputKey(event, this)">
+            </div>
+            <div class="field-error-msg" id="skrSkillsError">Please select at least one skill.</div>
+          </div>
+
+          <!-- Quick Clickable Skills Library -->
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: #64748b; margin-bottom: 8px;">Click to add popular skills:</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;" id="seekerSkillsLibrary">
+              <!-- Dynamically rendered / clickable skill chips -->
+            </div>
+          </div>
+
+          <!-- Experience Level -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrExperience">Experience Level</label>
+              <select id="skrExperience" class="form-control">
+                <option value="Fresh Graduate / Entry Level">Fresh Graduate / Entry Level (0-1 yrs)</option>
+                <option value="Junior Level">Junior Level (1-2 yrs)</option>
+                <option value="Mid Level" selected>Mid Level (2-4 yrs)</option>
+                <option value="Senior Level">Senior Level (5+ yrs)</option>
+                <option value="Lead / Executive">Lead / Manager / Executive</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="skrJobTitle">Current / Desired Job Title</label>
+              <input type="text" id="skrJobTitle" class="form-control" placeholder="e.g. Frontend Developer" value="Full Stack Developer">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 1.75rem;">
+            <button type="button" onclick="prevSeekerStep(3)" class="btn btn-outline">
+              ← Back
+            </button>
+            <button type="button" onclick="nextSeekerStep(3)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+              Next Step →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Resume & Profile -->
+        <div id="seekerStep4" class="seeker-step-pane" style="display: none;">
+          <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Resume & Profile</h2>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Upload your CV or build one later</p>
+
+          <!-- Resume Upload Dropzone -->
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label">Resume / CV (Optional)</label>
+            <div class="file-dropzone" id="seekerResumeDropzone" onclick="document.getElementById('skrResumeFile').click()">
+              <input type="file" id="skrResumeFile" style="display: none;" accept=".pdf,.doc,.docx" onchange="handleResumeUpload(this)">
+              <div style="font-size: 2rem; color: #0066ff; margin-bottom: 4px;">📄</div>
+              <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;" id="resumeUploadPrompt">
+                Click to upload your resume or drag and drop
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-top: 4px;">
+                Supports PDF, DOC, DOCX (Max 5MB)
+              </div>
+              <div id="resumeFilePreview" style="display: none; margin-top: 8px; font-weight: 700; color: #16a34a; font-size: 0.85rem;"></div>
+            </div>
+          </div>
+
+          <!-- Professional Bio -->
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label" for="skrBio">Professional Summary / Bio</label>
+            <textarea id="skrBio" class="form-control" rows="3" placeholder="Briefly describe your background, career goals, and what you bring to potential employers in Nepal..."></textarea>
+          </div>
+
+          <!-- Expected Salary -->
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label" for="skrSalary">Expected Salary (NPR / Month)</label>
+            <input type="text" id="skrSalary" class="form-control" placeholder="e.g. NPR 60,000 - 90,000" value="NPR 75,000">
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 1.75rem;">
+            <button type="button" onclick="prevSeekerStep(4)" class="btn btn-outline">
+              ← Back
+            </button>
+            <button type="button" onclick="nextSeekerStep(4)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+              Submit & Verify →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 5: Verification (Email / Mobile OTP) -->
+        <div id="seekerStep5" class="seeker-step-pane" style="display: none;">
+          <div style="text-align: center; max-width: 440px; margin: 0 auto;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: #eff6ff; color: var(--primary); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+              📱
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Verify Your Account</h2>
+            <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">
+              Enter the verification code sent to your email or mobile number: <br>
+              <strong id="skrVerificationTarget" style="color: var(--text-main);">example@gmail.com</strong>
+            </p>
+
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 0.6rem 0.85rem; border-radius: var(--radius-md); font-size: 0.82rem; margin-bottom: 1.25rem;">
+              ⚡ Demo Auto-Fill: Use verification code <strong>123456</strong>
+            </div>
+
+            <div class="otp-inputs-grid" id="skrOtpGrid">
+              <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 0, 'skrOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 0, 'skrOtpGrid')" autofocus>
+              <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 1, 'skrOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 1, 'skrOtpGrid')">
+              <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 2, 'skrOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 2, 'skrOtpGrid')">
+              <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 3, 'skrOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 3, 'skrOtpGrid')">
+              <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 4, 'skrOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 4, 'skrOtpGrid')">
+              <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 5, 'skrOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 5, 'skrOtpGrid')">
+            </div>
+
+            <div class="field-error-msg" id="skrOtpError" style="margin-bottom: 1rem;">Invalid verification code. Please enter 123456.</div>
+
+            <button type="button" onclick="verifySeekerAccount()" class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 1rem;">
+              Verify Account
+            </button>
+
+            <div style="font-size: 0.86rem; color: #64748b;">
+              Didn't receive code? 
+              <span id="skrResendContainer">
+                <a href="javascript:void(0)" onclick="resendOtp('skr')" style="font-weight: 700; color: var(--primary);">Resend Code</a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUCCESS SCREEN -->
+        <div id="seekerStepSuccess" class="seeker-step-pane" style="display: none; text-align: center; padding: 1.5rem 0;">
+          <div class="success-checkmark-wrap">✓</div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
+            Welcome to Job Nepal! 🎉
+          </h2>
+          <p style="font-size: 1.05rem; color: #64748b; max-width: 520px; margin: 0 auto 2rem;">
+            Your job seeker account has been created and verified successfully.
+          </p>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="dashboard.html?role=seeker" class="btn btn-primary btn-lg" style="min-width: 200px;">
+              Go to Dashboard →
+            </a>
+            <a href="resume-builder.html" class="btn btn-outline btn-lg" style="min-width: 200px;">
+              Create Your Resume →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Feature Cards: Why Join Job Nepal? -->
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.8rem;">
+        <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px;">
+          <span>👤</span> Why Join Job Nepal?
+        </h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+          <div>
+            <div style="font-size: 1.5rem; margin-bottom: 4px;">💼</div>
+            <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;">Find Better Jobs</div>
+            <div style="font-size: 0.78rem; color: #64748b;">Thousands of jobs across Nepal</div>
+          </div>
+
+          <div>
+            <div style="font-size: 1.5rem; margin-bottom: 4px;">📄</div>
+            <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;">Create Your Resume</div>
+            <div style="font-size: 0.78rem; color: #64748b;">Build a professional resume easily</div>
+          </div>
+
+          <div>
+            <div style="font-size: 1.5rem; margin-bottom: 4px;">⏱️</div>
+            <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;">Get Job Alerts</div>
+            <div style="font-size: 0.78rem; color: #64748b;">Be the first to know about new jobs</div>
+          </div>
+
+          <div>
+            <div style="font-size: 1.5rem; margin-bottom: 4px;">🎯</div>
+            <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;">Grow Your Career</div>
+            <div style="font-size: 0.78rem; color: #64748b;">Build a brighter future in Nepal</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 3: COMPANY / EMPLOYER MULTI-STEP REGISTRATION FLOW
+       ========================================================================= -->
+  <div id="companyRegistrationView" class="reg-split-container" style="display: none;">
+    
+    <!-- Left Dark Blue Sidebar for Employer -->
+    <aside class="reg-sidebar">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+            🏢
+          </div>
+          <div>
+            <div style="font-weight: 800; font-size: 1.15rem; color: #fff;">Company Registration</div>
+            <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.75);">Create your employer account</div>
+          </div>
+        </div>
+
+        <!-- 4-Step Vertical Stepper for Employer -->
+        <ul class="reg-stepper-list" id="companyStepperList">
+          <li class="reg-step-item active" data-step="1">
+            <div class="reg-step-number">1</div>
+            <div>Company Information</div>
+          </li>
+          <li class="reg-step-item" data-step="2">
+            <div class="reg-step-number">2</div>
+            <div>Contact & Details</div>
+          </li>
+          <li class="reg-step-item" data-step="3">
+            <div class="reg-step-number">3</div>
+            <div>Logo & Security</div>
+          </li>
+          <li class="reg-step-item" data-step="4">
+            <div class="reg-step-number">4</div>
+            <div>Verify & Complete</div>
+          </li>
+        </ul>
+
+        <button type="button" onclick="cancelRegistration()" class="btn btn-outline" style="width: 100%; margin-top: 2rem; background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25); color: #fff;">
+          ← Choose Different Account
+        </button>
+      </div>
+
+      <!-- Bottom Graphic -->
+      <div style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+        <div style="font-size: 1.4rem; margin-bottom: 4px;">🏢</div>
+        <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 2px;">Build Your Team</div>
+        <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.75);">
+          Grow Your Business with Job Nepal
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="reg-main-content">
+      
+      <!-- Panoramic Mountain Banner -->
+      <div class="reg-scenic-banner">
+        <h1 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 4px;">Join as a Company</h1>
+        <p style="font-size: 0.95rem; opacity: 0.95;">
+          Post jobs, find great talent and grow your team with Job Nepal.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.45fr 1fr; gap: 1.75rem; align-items: start;">
+        
+        <!-- Left: Form Card -->
+        <div class="reg-form-card" style="margin-bottom: 0;">
+          
+          <!-- STEP 1: Company Information -->
+          <div id="companyStep1" class="company-step-pane">
+            <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Company Information</h2>
+            <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Tell us about your company</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; margin-bottom: 1.15rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpName">Company Name <span style="color: var(--nepal-red);">*</span></label>
+                <input type="text" id="cmpName" class="form-control" placeholder="Enter company name" required>
+                <div class="field-error-msg" id="cmpNameError">Company name is required.</div>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpEmail">Company Email <span style="color: var(--nepal-red);">*</span></label>
+                <input type="email" id="cmpEmail" class="form-control" placeholder="example@company.com" required>
+                <div class="field-error-msg" id="cmpEmailError">Please enter a valid company email.</div>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; margin-bottom: 1.15rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpPhone">Contact Number <span style="color: var(--nepal-red);">*</span></label>
+                <input type="tel" id="cmpPhone" class="form-control" placeholder="98XXXXXXXX" maxlength="10" required>
+                <div class="field-error-msg" id="cmpPhoneError">Contact number is required (10 digits).</div>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpWebsite">Website (Optional)</label>
+                <input type="url" id="cmpWebsite" class="form-control" placeholder="https://www.yourcompany.com">
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+              <button type="button" onclick="nextCompanyStep(1)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+                Next Step →
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Company Details & Profile -->
+          <div id="companyStep2" class="company-step-pane" style="display: none;">
+            <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Contact & Details</h2>
+            <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Set your industry, location, and description</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; margin-bottom: 1.15rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpIndustry">Industry <span style="color: var(--nepal-red);">*</span></label>
+                <select id="cmpIndustry" class="form-control" required>
+                  <option value="" disabled selected>Select industry</option>
+                  <option value="IT & Software">IT & Software</option>
+                  <option value="FinTech & Banking">FinTech & Banking</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Telecommunications">Telecommunications</option>
+                  <option value="Education">Education</option>
+                  <option value="Construction">Construction</option>
+                  <option value="Engineering">Engineering</option>
+                  <option value="Hospitality">Hospitality</option>
+                  <option value="Retail">Retail</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Consulting">Consulting</option>
+                  <option value="Media & Entertainment">Media & Entertainment</option>
+                  <option value="NGO / INGO">NGO / INGO</option>
+                  <option value="Government">Government</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="field-error-msg" id="cmpIndustryError">Please select company industry.</div>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpSize">Company Size <span style="color: var(--nepal-red);">*</span></label>
+                <select id="cmpSize" class="form-control" required>
+                  <option value="" disabled selected>Select company size</option>
+                  <option value="1–10 employees">1–10 employees</option>
+                  <option value="11–50 employees">11–50 employees</option>
+                  <option value="51–200 employees">51–200 employees</option>
+                  <option value="201–500 employees">201–500 employees</option>
+                  <option value="501–1000 employees">501–1000 employees</option>
+                  <option value="1000+ employees">1000+ employees</option>
+                </select>
+                <div class="field-error-msg" id="cmpSizeError">Please select company size.</div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.15rem;">
+              <label class="form-label" for="cmpAddress">Company Address <span style="color: var(--nepal-red);">*</span></label>
+              <input type="text" id="cmpAddress" class="form-control" placeholder="Enter full company address (e.g. Hattisar, Kathmandu, Nepal)" required>
+              <div class="field-error-msg" id="cmpAddressError">Company address is required.</div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.15rem;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <label class="form-label" for="cmpAbout">About Your Company <span style="color: var(--nepal-red);">*</span></label>
+                <span style="font-size: 0.78rem; color: #94a3b8;" id="aboutCharCount">0 / 500</span>
+              </div>
+              <textarea 
+                id="cmpAbout" 
+                class="form-control" 
+                rows="4" 
+                maxlength="500" 
+                placeholder="Tell us about your company, mission, services and team..."
+                oninput="document.getElementById('aboutCharCount').innerText = this.value.length + ' / 500'"
+                required
+              ></textarea>
+              <div class="field-error-msg" id="cmpAboutError">Please provide a brief company description (max 500 characters).</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 1.75rem;">
+              <button type="button" onclick="prevCompanyStep(2)" class="btn btn-outline">
+                ← Back
+              </button>
+              <button type="button" onclick="nextCompanyStep(2)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+                Next Step →
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Logo & Account Security -->
+          <div id="companyStep3" class="company-step-pane" style="display: none;">
+            <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Logo & Account Security</h2>
+            <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">Upload company logo and set a secure password</p>
+
+            <!-- Logo Upload Area -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label class="form-label">Company Logo</label>
+              <div class="file-dropzone" id="cmpLogoDropzone" onclick="document.getElementById('cmpLogoFile').click()">
+                <input type="file" id="cmpLogoFile" style="display: none;" accept="image/jpeg,image/png,image/svg+xml" onchange="handleLogoUpload(this)">
+                <div style="font-size: 2rem; color: #0066ff; margin-bottom: 4px;">☁️</div>
+                <div style="font-size: 0.92rem; font-weight: 700; color: #0f172a;" id="logoUploadPrompt">
+                  Click to upload or drag and drop
+                </div>
+                <div style="font-size: 0.78rem; color: #64748b; margin-top: 4px;">
+                  Supporting formats: JPG, PNG, SVG • Recommended: 200 × 200 px
+                </div>
+                
+                <div id="logoPreviewWrapper" style="display: none;">
+                  <div class="image-preview-card">
+                    <img id="logoPreviewImg" src="" alt="Company Logo Preview">
+                    <button type="button" class="image-preview-remove" onclick="removeCompanyLogo(event)">✕</button>
+                  </div>
+                </div>
+              </div>
+              <div class="field-error-msg" id="cmpLogoError">Please upload a valid company logo (JPG, PNG, or SVG under 2MB).</div>
+            </div>
+
+            <!-- Password Fields -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; margin-bottom: 1rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpPassword">Password <span style="color: var(--nepal-red);">*</span></label>
+                <div class="password-input-wrap">
+                  <input type="password" id="cmpPassword" class="form-control" placeholder="Create a strong password" oninput="updatePasswordStrength(this.value, 'cmpPwdMeter', 'cmpPwdReqs')" required>
+                  <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('cmpPassword', this)">👁️</button>
+                </div>
+                <div class="field-error-msg" id="cmpPasswordError">Password must contain at least 8 characters.</div>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cmpConfirmPassword">Confirm Password <span style="color: var(--nepal-red);">*</span></label>
+                <div class="password-input-wrap">
+                  <input type="password" id="cmpConfirmPassword" class="form-control" placeholder="Confirm your password" required>
+                  <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('cmpConfirmPassword', this)">👁️</button>
+                </div>
+                <div class="field-error-msg" id="cmpConfirmPasswordError">Passwords do not match.</div>
+              </div>
+            </div>
+
+            <!-- Password Strength Display -->
+            <div class="pwd-strength-container" id="cmpPwdMeter" style="display: none;">
+              <div class="pwd-strength-bar">
+                <div class="pwd-strength-segment" id="cmpPwdSeg1"></div>
+                <div class="pwd-strength-segment" id="cmpPwdSeg2"></div>
+                <div class="pwd-strength-segment" id="cmpPwdSeg3"></div>
+                <div class="pwd-strength-segment" id="cmpPwdSeg4"></div>
+              </div>
+              <div class="pwd-strength-label">
+                <span>Strength: <span id="cmpPwdText" style="color: var(--nepal-red);">Too Weak</span></span>
+              </div>
+              <ul class="pwd-req-list" id="cmpPwdReqs">
+                <li class="pwd-req-item invalid" data-req="len">Minimum 8 characters</li>
+                <li class="pwd-req-item invalid" data-req="upper">Uppercase letter</li>
+                <li class="pwd-req-item invalid" data-req="lower">Lowercase letter</li>
+                <li class="pwd-req-item invalid" data-req="num">Number</li>
+                <li class="pwd-req-item invalid" data-req="spec">Special character</li>
+              </ul>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 1.75rem;">
+              <button type="button" onclick="prevCompanyStep(3)" class="btn btn-outline">
+                ← Back
+              </button>
+              <button type="button" onclick="nextCompanyStep(3)" class="btn btn-primary btn-lg" style="min-width: 160px;">
+                Submit & Verify →
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Account Verification (OTP) -->
+          <div id="companyStep4" class="company-step-pane" style="display: none;">
+            <div style="text-align: center; max-width: 440px; margin: 0 auto;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: #fff1f2; color: var(--nepal-crimson); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                🏢
+              </div>
+              <h2 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 4px; color: #0f172a;">Verify Your Account</h2>
+              <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.5rem;">
+                Enter the verification code sent to your company email or contact number: <br>
+                <strong id="cmpVerificationTarget" style="color: var(--text-main);">example@company.com</strong>
+              </p>
+
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 0.6rem 0.85rem; border-radius: var(--radius-md); font-size: 0.82rem; margin-bottom: 1.25rem;">
+                ⚡ Demo Auto-Fill: Use verification code <strong>123456</strong>
+              </div>
+
+              <div class="otp-inputs-grid" id="cmpOtpGrid">
+                <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 0, 'cmpOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 0, 'cmpOtpGrid')" autofocus>
+                <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 1, 'cmpOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 1, 'cmpOtpGrid')">
+                <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 2, 'cmpOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 2, 'cmpOtpGrid')">
+                <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 3, 'cmpOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 3, 'cmpOtpGrid')">
+                <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 4, 'cmpOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 4, 'cmpOtpGrid')">
+                <input type="text" maxlength="1" class="otp-box" oninput="handleOtpInput(this, 5, 'cmpOtpGrid')" onkeydown="handleOtpKeyDown(event, this, 5, 'cmpOtpGrid')">
+              </div>
+
+              <div class="field-error-msg" id="cmpOtpError" style="margin-bottom: 1rem;">Invalid verification code. Please enter 123456.</div>
+
+              <button type="button" onclick="verifyCompanyAccount()" class="btn btn-crimson btn-lg" style="width: 100%; margin-bottom: 1rem;">
+                Verify Account
+              </button>
+
+              <div style="font-size: 0.86rem; color: #64748b;">
+                Didn't receive code? 
+                <span id="cmpResendContainer">
+                  <a href="javascript:void(0)" onclick="resendOtp('cmp')" style="font-weight: 700; color: var(--primary);">Resend Code</a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUCCESS SCREEN -->
+          <div id="companyStepSuccess" class="company-step-pane" style="display: none; text-align: center; padding: 1.5rem 0;">
+            <div class="success-checkmark-wrap">✓</div>
+            <h2 style="font-size: 2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
+              Welcome to Job Nepal! 🎉
+            </h2>
+            <p style="font-size: 1.05rem; color: #64748b; max-width: 520px; margin: 0 auto 2rem;">
+              Your company account has been created successfully.
+            </p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="dashboard.html?role=employer" class="btn btn-primary btn-lg" style="min-width: 200px;">
+                Go to Employer Dashboard →
+              </a>
+              <a href="post-job.html" class="btn btn-crimson btn-lg" style="min-width: 200px;">
+                Post Your First Job →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Benefits & Testimonial Card -->
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          
+          <!-- Why Register as a Company -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.4rem;">
+            <h3 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem;">Why Register as a Company?</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: #0066ff; font-size: 1.1rem;">🏢</span>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 700;">Post job vacancies</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">Reach thousands of job seekers</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: #0066ff; font-size: 1.1rem;">🔍</span>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 700;">Find the right talent</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">Use advanced search & filters</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: #0066ff; font-size: 1.1rem;">📋</span>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 700;">Manage applications</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">Track and shortlist candidates</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: #0066ff; font-size: 1.1rem;">🌐</span>
+                <div>
+                  <div style="font-size: 0.84rem; font-weight: 700;">Build your brand</div>
+                  <div style="font-size: 0.74rem; color: #64748b;">Showcase your company profile</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Quote Card -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.4rem;">
+            <div style="font-size: 1.8rem; color: #0066ff; line-height: 1; margin-bottom: 4px;">“</div>
+            <p style="font-size: 0.84rem; color: #334155; line-height: 1.5; font-style: italic; margin-bottom: 0.75rem;">
+              "Job Nepal helped us find great talent quickly. The platform is easy to use and very effective for our hiring needs."
+            </p>
+            <div style="font-size: 0.78rem; font-weight: 700; color: #0f172a;">— HR Manager</div>
+            <div style="font-size: 0.72rem; color: #64748b;">ABC Technology Pvt. Ltd.</div>
+          </div>
+
+          <!-- Nepal Flag Banner -->
+          <div style="background: #f0f7ff; border: 1px solid #bfdbfe; border-radius: var(--radius-lg); padding: 1.2rem; text-align: center;">
+            <div style="font-size: 1.3rem; margin-bottom: 2px;">🇳🇵</div>
+            <div style="font-weight: 800; font-size: 0.88rem; color: #0f172a;">Together for a Stronger Nepal</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>
+        © 2026 JOB NEPAL — Find Your Job. Build Your Future.
+      </div>
+      <div style="display: flex; gap: 1.25rem;">
+        <a href="index.html" style="color: #94a3b8;">Home</a>
+        <a href="login.html" style="color: #94a3b8;">Login</a>
+        <a href="companies.html" style="color: #94a3b8;">Companies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

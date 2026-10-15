@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Jobs (8) — Sandeep Basnet | JOB NEPAL</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body style="background-color: #f8fafc;">
+
+  <!-- Dashboard Topbar -->
+  <header class="dashboard-topbar">
+    <a href="../index.html" class="brand-logo">
+      <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+        <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text-wrap">
+        <div class="brand-name">JOB <span>NEPAL</span></div>
+        <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+      </div>
+    </a>
+
+    <div style="position: relative;">
+      <span style="position: absolute; left: 14px; top: 10px; color: #94a3b8;">🔍</span>
+      <input type="text" class="dash-search-input" placeholder="Search saved jobs, skills..." id="savedSearchInput" oninput="filterSaved(this.value)">
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a href="job-alerts.html" style="position: relative; text-decoration: none; color: inherit;" title="Job Alerts">
+        <span style="font-size: 1.25rem;">🔔</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #e11d48; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">3</span>
+      </a>
+
+      <a href="messages.html" style="position: relative; text-decoration: none; color: inherit;" title="Messages">
+        <span style="font-size: 1.25rem;">💬</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #0066ff; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">2</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding-left: 8px; border-left: 1px solid var(--border-color);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: #0066ff; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+          SB
+        </div>
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <span style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Sandeep Basnet</span>
+          <span style="font-size: 0.76rem; color: #64748b;">Job Seeker</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Split Layout -->
+  <div class="dash-main-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="dash-left-sidebar">
+      <ul class="sidebar-nav-list">
+        <li class="sidebar-nav-item">
+          <a href="dashboard.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🏠</span> Dashboard
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="profile.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>👤</span> My Profile
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="resume-builder.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📄</span> My Resume
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="applied-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💼</span> Applied Jobs
+            </div>
+            <span class="sidebar-badge">5</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item active">
+          <a href="saved-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⭐</span> Saved Jobs
+            </div>
+            <span class="sidebar-badge" style="background: rgba(255,255,255,0.25);">8</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="recommended-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🎯</span> Recommended Jobs
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="job-alerts.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🔔</span> Job Alerts
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="messages.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💬</span> Messages
+            </div>
+            <span class="sidebar-badge">2</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="application-status.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📈</span> Application Status
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="career.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📖</span> Career Resources
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="settings.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⚙️</span> Settings
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-mountain-footer">
+        <svg viewBox="0 0 200 60" width="100%" height="40" fill="none" style="opacity: 0.6; margin-bottom: 6px;">
+          <polygon points="10,60 50,15 90,60" fill="#ffffff"/>
+          <polygon points="80,60 120,5 160,60" fill="#ffffff"/>
+          <polygon points="140,60 175,25 200,60" fill="#ffffff"/>
+        </svg>
+        <div style="font-style: italic; margin-bottom: 8px;">
+          "Better Skills<br>Better Opportunities<br>A Brighter Future"
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #fff;">
+          <span>🇳🇵</span> Job Nepal
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dash-content-area" style="padding: 2rem;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.8rem;">
+        <div>
+          <h1 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin: 0 0 4px 0;">⭐ Saved Bookmarks (8)</h1>
+          <p style="color: #64748b; margin: 0; font-size: 0.92rem;">Your shortlisted vacancies saved for later application. Apply before expiration deadlines.</p>
+        </div>
+        <a href="../jobs.html" class="btn btn-outline btn-sm">Explore More Jobs</a>
+      </div>
+
+      <!-- Saved Jobs Grid -->
+      <div id="savedJobsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem;">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    const SAVED_ITEMS = [
+      {
+        id: "job-101",
+        title: "Senior Java & Spring Boot Engineer",
+        company: "Cotiviti Nepal",
+        logoText: "CN",
+        location: "Kathmandu",
+        salary: "NPR 150,000 – 220,000 / mo",
+        type: "Full Time",
+        matchScore: "95% Match",
+        deadline: "12 days left",
+        skills: ["Java", "Spring Boot", "PostgreSQL", "Docker"]
+      },
+      {
+        id: "job-102",
+        title: "Senior Python & AI Engineer",
+        company: "Leapfrog Technology",
+        logoText: "LF",
+        location: "Kathmandu",
+        salary: "NPR 140,000 – 200,000 / mo",
+        type: "Hybrid",
+        matchScore: "92% Match",
+        deadline: "8 days left",
+        skills: ["Python", "FastAPI", "Django", "PyTorch"]
+      },
+      {
+        id: "job-104",
+        title: "Senior Go / Golang Backend Engineer",
+        company: "CloudFactory Nepal",
+        logoText: "CF",
+        location: "Remote — Nepal",
+        salary: "NPR 160,000 – 250,000 / mo",
+        type: "Remote",
+        matchScore: "88% Match",
+        deadline: "20 days left",
+        skills: ["Go", "Kafka", "PostgreSQL", "Docker"]
+      },
+      {
+        id: "job-105",
+        title: "Full Stack Java / React Developer",
+        company: "Deerhold Nepal",
+        logoText: "DH",
+        location: "Kathmandu",
+        salary: "NPR 110,000 – 170,000 / mo",
+        type: "Full Time",
+        matchScore: "94% Match",
+        deadline: "15 days left",
+        skills: ["Java", "React", "TypeScript", "AWS"]
+      },
+      {
+        id: "job-103",
+        title: "Full Stack JavaScript Developer",
+        company: "F1Soft International",
+        logoText: "F1",
+        location: "Lalitpur",
+        salary: "NPR 90,000 – 140,000 / mo",
+        type: "On-site",
+        matchScore: "89% Match",
+        deadline: "14 days left",
+        skills: ["React", "Node.js", "Express", "MongoDB"]
+      },
+      {
+        id: "job-108",
+        title: "Data Science & ML Associate",
+        company: "Fusemachines Nepal",
+        logoText: "FM",
+        location: "Kathmandu",
+        salary: "NPR 80,000 – 130,000 / mo",
+        type: "Hybrid",
+        matchScore: "86% Match",
+        deadline: "11 days left",
+        skills: ["Python", "Scikit-Learn", "SQL", "Pandas"]
+      },
+      {
+        id: "job-109",
+        title: "Enterprise Solutions Architect (Java/Cloud)",
+        company: "Ncell Axiata",
+        logoText: "NC",
+        location: "Kathmandu",
+        salary: "NPR 250,000 – 380,000 / mo",
+        type: "Full Time",
+        matchScore: "91% Match",
+        deadline: "5 days left",
+        skills: ["Java", "Kubernetes", "Cloud", "Telecom"]
+      },
+      {
+        id: "job-110",
+        title: "DevOps & Cloud Infrastructure Engineer",
+        company: "Leapfrog Technology",
+        logoText: "LF",
+        location: "Kathmandu",
+        salary: "NPR 130,000 – 190,000 / mo",
+        type: "Hybrid",
+        matchScore: "84% Match",
+        deadline: "18 days left",
+        skills: ["AWS", "Terraform", "Docker", "CI/CD"]
+      }
+    ];
+
+    function renderSaved() {
+      const container = document.getElementById('savedJobsGrid');
+      if (SAVED_ITEMS.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; background: #fff; padding: 3rem; text-align: center; border-radius: var(--radius-xl); border: 1px solid var(--border-color);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⭐</div>
+            <h3 style="font-size: 1.1rem; color: #0f172a;">No saved jobs yet</h3>
+            <p style="color: #64748b; font-size: 0.9rem;">Bookmark jobs while browsing to save them for easy reference.</p>
+            <a href="../jobs.html" class="btn btn-primary btn-sm">Browse Vacancies</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = SAVED_ITEMS.map((job, idx) => `
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <div class="company-avatar" style="width: 48px; height: 48px; font-size: 1.1rem;">${job.logoText}</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">${job.company}</div>
+                  <div style="font-size: 0.8rem; color: #64748b;">📍 ${job.location} • ${job.type}</div>
+                </div>
+              </div>
+              <button onclick="removeSaved(${idx})" class="btn btn-ghost btn-sm" style="color: #f59e0b; font-size: 1.1rem; padding: 4px 6px;" title="Remove Bookmark">⭐</button>
+            </div>
+
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 6px 0;">
+              <a href="../job-details.html?id=${job.id}" style="color: inherit; text-decoration: none;">${job.title}</a>
+            </h3>
+
+            <div style="font-weight: 700; font-size: 0.95rem; color: #0066ff; margin-bottom: 8px;">
+              💰 ${job.salary}
+            </div>
+
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+              ${job.skills.map(s => `<span class="badge badge-indigo" style="font-size: 0.76rem;">${s}</span>`).join('')}
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid #f1f5f9; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.8rem; color: #e11d48; font-weight: 600;">⏳ ${job.deadline}</span>
+            <div style="display: flex; gap: 8px;">
+              <a href="../job-details.html?id=${job.id}" class="btn btn-outline btn-sm">Details</a>
+              <a href="../job-details.html?id=${job.id}&action=apply" class="btn btn-primary btn-sm">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function removeSaved(idx) {
+      const removed = SAVED_ITEMS.splice(idx, 1)[0];
+      renderSaved();
+      showToast(`Removed "${removed.title}" from saved jobs`, 'info');
+    }
+
+    function filterSaved(query) {
+      const q = query.toLowerCase().trim();
+      const container = document.getElementById('savedJobsGrid');
+      const filtered = SAVED_ITEMS.filter(j => 
+        j.title.toLowerCase().includes(q) || 
+        j.company.toLowerCase().includes(q) || 
+        j.skills.some(s => s.toLowerCase().includes(q))
+      );
+      
+      container.innerHTML = filtered.map((job, idx) => `
+        <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <div class="company-avatar" style="width: 48px; height: 48px; font-size: 1.1rem;">${job.logoText}</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">${job.company}</div>
+                  <div style="font-size: 0.8rem; color: #64748b;">📍 ${job.location} • ${job.type}</div>
+                </div>
+              </div>
+              <button onclick="removeSaved(${idx})" class="btn btn-ghost btn-sm" style="color: #f59e0b; font-size: 1.1rem;">⭐</button>
+            </div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 6px 0;">
+              <a href="../job-details.html?id=${job.id}" style="color: inherit; text-decoration: none;">${job.title}</a>
+            </h3>
+            <div style="font-weight: 700; font-size: 0.95rem; color: #0066ff; margin-bottom: 8px;">💰 ${job.salary}</div>
+          </div>
+          <div style="border-top: 1px solid #f1f5f9; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.8rem; color: #e11d48; font-weight: 600;">⏳ ${job.deadline}</span>
+            <a href="../job-details.html?id=${job.id}&action=apply" class="btn btn-primary btn-sm">Apply Now</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSaved);
+  </script>
+</body>
+</html>

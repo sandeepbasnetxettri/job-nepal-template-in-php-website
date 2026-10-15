@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile — Sandeep Basnet | JOB NEPAL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body style="background-color: #f8fafc;">
+
+  <!-- Dashboard Topbar -->
+  <header class="dashboard-topbar">
+    <a href="index.html" class="brand-logo">
+      <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+        <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text-wrap">
+        <div class="brand-name">JOB <span>NEPAL</span></div>
+        <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+      </div>
+    </a>
+
+    <div style="position: relative;">
+      <span style="position: absolute; left: 14px; top: 10px; color: #94a3b8;">🔍</span>
+      <input type="text" class="dash-search-input" placeholder="Search jobs, companies, skills..." id="dashHeaderSearch">
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a href="job-alerts.html" style="position: relative; text-decoration: none; color: inherit;" title="Job Alerts">
+        <span style="font-size: 1.25rem;">🔔</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #e11d48; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">3</span>
+      </a>
+
+      <a href="messages.html" style="position: relative; text-decoration: none; color: inherit;" title="Messages">
+        <span style="font-size: 1.25rem;">💬</span>
+        <span style="position: absolute; top: -4px; right: -6px; background: #0066ff; color: #fff; font-size: 0.68rem; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff;">2</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding-left: 8px; border-left: 1px solid var(--border-color);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: #0066ff; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+          SB
+        </div>
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <span style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">Sandeep Basnet</span>
+          <span style="font-size: 0.76rem; color: #64748b;">Job Seeker</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Split Layout -->
+  <div class="dash-main-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="dash-left-sidebar">
+      <ul class="sidebar-nav-list">
+        <li class="sidebar-nav-item">
+          <a href="dashboard.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🏠</span> Dashboard
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item active">
+          <a href="profile.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>👤</span> My Profile
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="resume-builder.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📄</span> My Resume
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="applied-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💼</span> Applied Jobs
+            </div>
+            <span class="sidebar-badge">5</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="saved-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⭐</span> Saved Jobs
+            </div>
+            <span class="sidebar-badge" style="background: rgba(255,255,255,0.25);">8</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="recommended-jobs.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🎯</span> Recommended Jobs
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="job-alerts.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>🔔</span> Job Alerts
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="messages.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>💬</span> Messages
+            </div>
+            <span class="sidebar-badge">2</span>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="application-status.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📈</span> Application Status
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="career.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>📖</span> Career Resources
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-nav-item">
+          <a href="settings.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span>⚙️</span> Settings
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-mountain-footer">
+        <svg viewBox="0 0 200 60" width="100%" height="40" fill="none" style="opacity: 0.6; margin-bottom: 6px;">
+          <polygon points="10,60 50,15 90,60" fill="#ffffff"/>
+          <polygon points="80,60 120,5 160,60" fill="#ffffff"/>
+          <polygon points="140,60 175,25 200,60" fill="#ffffff"/>
+        </svg>
+        <div style="font-style: italic; margin-bottom: 8px;">
+          "Better Skills<br>Better Opportunities<br>A Brighter Future"
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: #fff;">
+          <span>🇳🇵</span> Job Nepal
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dash-content-area" style="padding: 2rem;">
+      
+      <!-- Top Profile Banner Card -->
+      <div style="background: linear-gradient(135deg, #002b66 0%, #0066ff 100%); border-radius: var(--radius-xl); padding: 2.2rem; color: #fff; margin-bottom: 2rem; position: relative; overflow: hidden; box-shadow: var(--shadow-md);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; position: relative; z-index: 2;">
+          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <div style="position: relative;">
+              <div style="width: 90px; height: 90px; border-radius: 50%; background: #ffffff; color: #0066ff; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; font-weight: 800; border: 4px solid rgba(255,255,255,0.3); box-shadow: var(--shadow-md);">
+                SB
+              </div>
+              <button onclick="showToast('Profile photo update opened', 'info')" style="position: absolute; bottom: 0; right: 0; background: #e11d48; color: #fff; border: none; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;" title="Change Photo">📷</button>
+            </div>
+
+            <div>
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                <h1 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: #fff;">Sandeep Basnet</h1>
+                <span class="badge badge-success" style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid #10b981;">✓ Verified Candidate</span>
+              </div>
+              <div style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 6px;">
+                Senior Full-Stack & Python / Java Engineer
+              </div>
+              <div style="font-size: 0.88rem; opacity: 0.8; display: flex; gap: 16px; flex-wrap: wrap;">
+                <span>📍 Kathmandu, Nepal</span>
+                <span>📧 sandeep.adhikari@example.com</span>
+                <span>📱 +977 9841234567</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); padding: 1.2rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.2); min-width: 220px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">
+              <span>Profile Strength</span>
+              <span style="color: #6ee7b7;">88% Completed</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 8px;">
+              <div style="background: #10b981; height: 100%; width: 88%; border-radius: 4px;"></div>
+            </div>
+            <div style="font-size: 0.78rem; opacity: 0.85;">Add 2 more certifications to reach 100%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Details Form Grid -->
+      <div class="profile-layout-grid">
+        
+        <!-- Left Column: Detailed Information -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Personal & Professional Information -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.8rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h2 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0;">👤 Personal Details</h2>
+              <button onclick="saveProfile()" class="btn btn-primary btn-sm">Save Changes</button>
+            </div>
+
+            <div class="form-grid-2col">
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Full Name</label>
+                <input type="text" id="profFullName" value="Sandeep Basnet" class="form-input" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.92rem;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Primary Email</label>
+                <input type="email" id="profEmail" value="sandeep.adhikari@example.com" class="form-input" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.92rem;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Phone Number (Nepal)</label>
+                <input type="text" id="profPhone" value="+977 9841234567" class="form-input" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.92rem;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Current Location</label>
+                <select id="profLocation" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.92rem; background: #fff;">
+                  <option value="Kathmandu" selected>Kathmandu</option>
+                  <option value="Lalitpur">Lalitpur</option>
+                  <option value="Bhaktapur">Bhaktapur</option>
+                  <option value="Pokhara">Pokhara</option>
+                  <option value="Chitwan">Chitwan</option>
+                  <option value="Butwal">Butwal</option>
+                  <option value="Remote — Nepal">Remote — Nepal</option>
+                </select>
+              </div>
+              <div style="grid-column: span 2;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Professional Bio / Summary</label>
+                <textarea id="profBio" rows="3" style="width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.92rem; font-family: inherit;">Passionate Software Engineer with 4+ years of experience building high-scale distributed backend systems, REST APIs, and microservices in Python (FastAPI/Django) and Java (Spring Boot). Strong foundation in database optimization, cloud deployments, and AI integrations.</textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills & Competencies -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.8rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+              <h2 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0;">⚡ Technical Skills & Frameworks</h2>
+              <button onclick="addSkillPrompt()" class="btn btn-outline btn-sm">+ Add Skill</button>
+            </div>
+
+            <div id="skillsContainer" style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">Python ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">Java ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">FastAPI ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">Spring Boot ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">React.js ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">PostgreSQL ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">Docker ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">Redis ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">REST APIs ✕</span>
+              <span class="badge badge-indigo" style="font-size: 0.88rem; padding: 6px 12px;">Git & CI/CD ✕</span>
+            </div>
+          </div>
+
+          <!-- Work Experience Timeline -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.8rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h2 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0;">💼 Work Experience</h2>
+              <button onclick="showToast('Add Experience dialog', 'info')" class="btn btn-outline btn-sm">+ Add Position</button>
+            </div>
+
+            <div style="border-left: 2px solid #e2e8f0; margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; gap: 1.8rem;">
+              <!-- Role 1 -->
+              <div style="position: relative;">
+                <div style="position: absolute; left: -27px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0066ff; border: 2px solid #fff;"></div>
+                <div style="font-weight: 700; font-size: 1.05rem; color: #0f172a;">Senior Backend Engineer</div>
+                <div style="color: #0066ff; font-weight: 600; font-size: 0.9rem;">Cotiviti Nepal • Kathmandu</div>
+                <div style="color: #64748b; font-size: 0.82rem; margin-bottom: 6px;">2024 – Present (Full Time)</div>
+                <p style="font-size: 0.88rem; color: #475569; margin: 0;">Architected scalable microservices processing 20M+ healthcare data records. Implemented async message queue with RabbitMQ and Redis caching.</p>
+              </div>
+
+              <!-- Role 2 -->
+              <div style="position: relative;">
+                <div style="position: absolute; left: -27px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #94a3b8; border: 2px solid #fff;"></div>
+                <div style="font-weight: 700; font-size: 1.05rem; color: #0f172a;">Software Engineer</div>
+                <div style="color: #0066ff; font-weight: 600; font-size: 0.9rem;">Deerhold Nepal • Kathmandu</div>
+                <div style="color: #64748b; font-size: 0.82rem; margin-bottom: 6px;">2022 – 2024 (Full Time)</div>
+                <p style="font-size: 0.88rem; color: #475569; margin: 0;">Developed full-stack web applications with Python Django, React, and PostgreSQL. Integrated Stripe payment gateways and third-party APIs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.8rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+              <h2 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0;">🎓 Education & Academics</h2>
+              <button onclick="showToast('Add Education dialog', 'info')" class="btn btn-outline btn-sm">+ Add Education</button>
+            </div>
+
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+              <div style="font-size: 2rem;">🏛️</div>
+              <div>
+                <div style="font-weight: 700; font-size: 1.05rem; color: #0f172a;">Bachelor in Computer Engineering (B.E.)</div>
+                <div style="color: #0066ff; font-weight: 600; font-size: 0.9rem;">IOE Pulchowk Campus, Tribhuvan University</div>
+                <div style="color: #64748b; font-size: 0.82rem;">2018 – 2022 • First Division with Distinction</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Quick Cards & Actions -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Resume Quick Card -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">📄 Active Resume</h3>
+            <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: var(--radius-lg); padding: 1.2rem; text-align: center; margin-bottom: 1rem;">
+              <span style="font-size: 2.2rem;">📑</span>
+              <div style="font-weight: 700; font-size: 0.9rem; color: #0f172a; margin-top: 4px;">Sandeep_Basnet_CV_2026.pdf</div>
+              <div style="font-size: 0.78rem; color: #64748b;">Updated 2 days ago • 184 KB</div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <a href="resume-builder.html" class="btn btn-primary btn-sm" style="width: 100%; text-align: center;">Open ATS Resume Builder</a>
+              <button onclick="showToast('Resume downloaded successfully', 'success')" class="btn btn-outline btn-sm" style="width: 100%;">Download PDF</button>
+            </div>
+          </div>
+
+          <!-- Social & Portfolio Links -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">🌐 Online Profiles</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem;">
+                <span style="display: flex; align-items: center; gap: 8px;">💻 <strong>GitHub</strong></span>
+                <a href="https://github.com" target="_blank" style="color: #0066ff;">github.com/sandeep</a>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem;">
+                <span style="display: flex; align-items: center; gap: 8px;">💼 <strong>LinkedIn</strong></span>
+                <a href="https://linkedin.com" target="_blank" style="color: #0066ff;">linkedin.com/in/sandeep</a>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem;">
+                <span style="display: flex; align-items: center; gap: 8px;">🌐 <strong>Website</strong></span>
+                <a href="https://sandeep.com.np" target="_blank" style="color: #0066ff;">sandeep.com.np</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Navigation Card -->
+          <div style="background: #fff; border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem;">🚀 Quick Jump</h3>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <a href="applied-jobs.html" class="dash-nav-btn" style="display: flex; justify-content: space-between;">
+                <span>💼 View Applied Jobs</span>
+                <span class="badge badge-indigo">5</span>
+              </a>
+              <a href="saved-jobs.html" class="dash-nav-btn" style="display: flex; justify-content: space-between;">
+                <span>⭐ View Saved Jobs</span>
+                <span class="badge badge-indigo">8</span>
+              </a>
+              <a href="recommended-jobs.html" class="dash-nav-btn">
+                <span>🎯 AI Recommended Jobs</span>
+              </a>
+              <a href="messages.html" class="dash-nav-btn" style="display: flex; justify-content: space-between;">
+                <span>💬 Recruiter Messages</span>
+                <span class="badge badge-crimson">2</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function saveProfile() {
+      showToast('Profile details updated successfully!', 'success');
+    }
+
+    function addSkillPrompt() {
+      const skill = prompt('Enter a new technical skill:');
+      if (skill && skill.trim()) {
+        const container = document.getElementById('skillsContainer');
+        const badge = document.createElement('span');
+        badge.className = 'badge badge-indigo';
+        badge.style.fontSize = '0.88rem';
+        badge.style.padding = '6px 12px';
+        badge.innerText = skill.trim() + ' ✕';
+        badge.onclick = function() { this.remove(); };
+        container.appendChild(badge);
+        showToast(`Added skill: ${skill}`, 'success');
+      }
+    }
+  </script>
+</body>
+</html>

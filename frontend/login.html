@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — JOB NEPAL</title>
+  <meta name="description" content="Login to your Job Nepal account. Access job seeker and employer dashboards, manage applications, post jobs, and find career opportunities in Nepal.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇵</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Job Nepal Homepage">
+        <svg class="brand-mountain-icon" viewBox="0 0 54 32" fill="none">
+          <path d="M12 28L24 6L34 22L42 12L52 28H12Z" stroke="#0066FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 28L14 10L22 22" stroke="#0066FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12L24 6L28 13" stroke="#60A5FA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-name">JOB <span>NEPAL</span></div>
+          <div class="brand-tagline">Find Your Job. Build Your Future.</div>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+        <li><a href="companies.html" class="nav-link">Companies</a></li>
+        <li><a href="career.html" class="nav-link">Career</a></li>
+        <li><a href="post-job.html" class="nav-link">Post a Job</a></li>
+        <li><a href="login.html" class="nav-link active">Login</a></li>
+        <li><a href="register.html" class="nav-link">Register</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-ghost btn-sm" aria-label="Toggle dark/light mode">🌙</button>
+        <a href="post-job.html" class="btn btn-crimson btn-sm">Post a Job</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Login Main Section -->
+  <main class="login-page-main">
+    <div class="login-card-container">
+      
+      <!-- Top Header Badge & Titles -->
+      <div class="login-header-wrap">
+        <span class="login-auth-badge">
+          <span>🇳🇵</span> Job Nepal Authentication
+        </span>
+        <h1 class="login-card-title">Welcome Back</h1>
+        <p class="login-card-subtitle">Login to continue your Job Nepal journey.</p>
+      </div>
+
+      <!-- Account Type Selector (Job Seeker | Company / Employer) -->
+      <div class="auth-role-tabs" id="loginRoleTabs" role="tablist" aria-label="Select Account Type">
+        <button type="button" class="auth-role-tab active" id="tabRoleSeeker" onclick="selectLoginRole('seeker')">
+          <span>👤</span> Job Seeker
+        </button>
+        <button type="button" class="auth-role-tab" id="tabRoleEmployer" onclick="selectLoginRole('employer')">
+          <span>🏢</span> Company / Employer
+        </button>
+      </div>
+
+      <!-- Dynamic Role Context Banner -->
+      <div id="roleInfoBanner" class="role-info-banner">
+        <span id="roleBannerIcon">🎯</span>
+        <span id="roleBannerText">Logging in as <strong>Job Seeker</strong> — Access applications, resume & jobs.</span>
+      </div>
+
+      <!-- Main Login Form -->
+      <form id="loginForm" novalidate>
+        <input type="hidden" id="loginRole" value="seeker">
+
+        <!-- Email or Mobile Number -->
+        <div class="form-group">
+          <label class="form-label" for="loginIdentifier">
+            Email or Mobile Number <span style="color: var(--nepal-red);">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="loginIdentifier" 
+            class="form-control" 
+            placeholder="example@gmail.com or 98XXXXXXXX" 
+            required 
+            autocomplete="username"
+          >
+          <div class="field-error-msg" id="loginIdentifierError">Please enter your registered email address or 10-digit mobile number.</div>
+        </div>
+
+        <!-- Password Field with Toggle -->
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem;">
+            <label class="form-label" for="loginPassword" style="margin-bottom: 0;">
+              Password <span style="color: var(--nepal-red);">*</span>
+            </label>
+            <a href="javascript:void(0)" onclick="openForgotPasswordModal()" class="login-forgot-link">
+              Forgot Password?
+            </a>
+          </div>
+          <div class="password-input-wrap">
+            <input 
+              type="password" 
+              id="loginPassword" 
+              class="form-control" 
+              placeholder="Enter your password" 
+              required 
+              autocomplete="current-password"
+            >
+            <button 
+              type="button" 
+              class="password-toggle-btn" 
+              onclick="togglePasswordVisibility('loginPassword', this)" 
+              aria-label="Toggle password visibility"
+            >
+              👁️
+            </button>
+          </div>
+          <div class="field-error-msg" id="loginPasswordError">Please enter your account password.</div>
+        </div>
+
+        <!-- Options: Remember Me -->
+        <div class="login-options-row">
+          <label class="login-remember-label">
+            <input type="checkbox" id="rememberMe" checked>
+            Remember me
+          </label>
+        </div>
+
+        <!-- Primary Button -->
+        <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-login-submit">
+          <span>Login</span> <span style="font-size: 1.15rem;">→</span>
+        </button>
+
+        <!-- Quick 1-Click Demo Accounts -->
+        <div class="login-demo-box">
+          <div class="login-demo-title">
+            ⚡ Quick 1-Click Demo Login
+          </div>
+          <div class="login-demo-buttons-wrap">
+            <button type="button" onclick="fillDemoCredentials('seeker')" class="btn-demo-pill">
+              👤 Job Seeker Demo
+            </button>
+            <button type="button" onclick="fillDemoCredentials('employer')" class="btn-demo-pill">
+              🏢 Company Demo
+            </button>
+            <button type="button" onclick="fillDemoCredentials('admin')" class="btn-demo-pill">
+              ⚡ Admin Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Footer / Registration Prompts -->
+        <div class="login-footer-section">
+          <p class="login-footer-text">
+            Don't have an account? <a href="register.html" style="font-weight: 700; color: var(--primary);">Register Now</a>
+          </p>
+
+          <div class="login-register-grid">
+            <a href="register.html?type=seeker" class="btn-register-choice">
+              👤 Register as Job Seeker
+            </a>
+            <a href="register.html?type=company" class="btn-register-choice">
+              🏢 Register as Company
+            </a>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="auth-modal-backdrop" id="forgotPasswordModal">
+    <div class="auth-modal-box">
+      <button class="auth-modal-close" onclick="closeForgotPasswordModal()" aria-label="Close modal">✕</button>
+      
+      <div style="text-align: center; margin-bottom: 1.25rem;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #eff6ff; color: var(--primary); font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+          🔑
+        </div>
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main);">Reset Your Password</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+          Enter your registered email address or mobile number to receive a verification code.
+        </p>
+      </div>
+
+      <form id="forgotPasswordForm" onsubmit="handleForgotPasswordSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="resetIdentifier">Email or Mobile Number</label>
+          <input type="text" id="resetIdentifier" class="form-control" placeholder="example@gmail.com or 98XXXXXXXX" required>
+        </div>
+
+        <div id="resetOtpSection" style="display: none; margin-top: 1rem;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 0.6rem 0.85rem; border-radius: var(--radius-md); font-size: 0.82rem; margin-bottom: 0.85rem;">
+            ✓ Verification OTP sent! (Demo Code: <strong>123456</strong>)
+          </div>
+          <div class="form-group">
+            <label class="form-label">Enter 6-Digit OTP</label>
+            <input type="text" id="resetOtpInput" class="form-control" placeholder="123456" maxlength="6">
+          </div>
+          <div class="form-group">
+            <label class="form-label">New Password</label>
+            <input type="password" id="resetNewPassword" class="form-control" placeholder="Enter new strong password">
+          </div>
+        </div>
+
+        <button type="submit" id="resetSubmitBtn" class="btn btn-primary" style="width: 100%; margin-top: 0.75rem;">
+          Send Verification Code
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>
+        © 2026 JOB NEPAL — Find Your Job. Build Your Future.
+      </div>
+      <div style="display: flex; gap: 1.25rem;">
+        <a href="index.html" style="color: #94a3b8;">Home</a>
+        <a href="jobs.html" style="color: #94a3b8;">Find Jobs</a>
+        <a href="register.html" style="color: #94a3b8;">Create Account</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
